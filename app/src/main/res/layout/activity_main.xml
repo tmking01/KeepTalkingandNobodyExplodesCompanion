@@ -45,8 +45,13 @@
 
     <Switch
         android:id="@+id/switch4"
+<<<<<<< HEAD
         android:layout_width="344dp"
         android:layout_height="28dp"
+=======
+        android:layout_width="394dp"
+        android:layout_height="30dp"
+>>>>>>> e9a8ce4cc8d620072b7394efbeff73169ce86de9
         android:checked="false"
         android:text="Even Serial Number"
         tools:ignore="MissingConstraints"

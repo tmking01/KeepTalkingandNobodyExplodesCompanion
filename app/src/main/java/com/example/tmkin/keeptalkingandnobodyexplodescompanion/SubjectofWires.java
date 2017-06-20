@@ -28,8 +28,8 @@ public class SubjectofWires extends AppCompatActivity {
     }
 
     public void GetControls(View v){
-        Button GetResults = (Button)  findViewById(R.id.GetResult);
-        GetResults.setVisibility(View.VISIBLE);
+        //Button GetResults = (Button)  findViewById(R.id.GetResult);
+        //GetResults.setVisibility(View.VISIBLE);
     }
 
 

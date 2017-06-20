@@ -144,7 +144,7 @@ public class SubjectofWires extends AppCompatActivity {
         RadioGroup Radiofive = (RadioGroup) findViewById(R.id.WireFive);
         RadioGroup Radiosix = (RadioGroup) findViewById(R.id.WireSix);
         TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
-        RadioButton Radioone_one = (RadioButton) findViewById(R.id.radioButton6);
+        //RadioButton Radioone_one = (RadioButton) findViewById(R.id.radioButton6);
 
         RadioButton WireOneColor = ((RadioButton) findViewById(Radioone.getCheckedRadioButtonId()));
         RadioButton WireTwoColor = ((RadioButton) findViewById(Radiotwo.getCheckedRadioButtonId()));

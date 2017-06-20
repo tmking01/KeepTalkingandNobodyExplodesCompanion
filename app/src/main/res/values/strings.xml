@@ -6,6 +6,10 @@
     <string name="Cutthelastwire">Cut The Last Wire</string>
     <string name="WiresResult">Cut The Second Wire</string>
     <string name="Sumit">Get Result</string>
-
-
+    <string name="ContainsVowel">Contains Vowel?</string>
+    <string name="MoreThanOneBat">More Than one Battery?</string>
+    <string name="EvenSerialNum">Even Serial Number?</string>
+    <string name="OnTheSubjectOfWire">On the Subject of Wires</string>
+    <string name="Strike1Slide">Strike 1</string>
+    <string name="Strike2Slide">Strike 2</string>
 </resources>

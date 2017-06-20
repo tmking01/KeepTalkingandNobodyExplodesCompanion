@@ -28,8 +28,6 @@ public class SubjectofWires extends AppCompatActivity {
     }
 
     public void GetControls(View v){
-        Switch onOffSwitch = (Switch)  findViewById(R.id.HasRedwire);
-        onOffSwitch.setVisibility(View.VISIBLE);
         Button GetResults = (Button)  findViewById(R.id.GetResult);
         GetResults.setVisibility(View.VISIBLE);
     }

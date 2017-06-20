@@ -25,9 +25,6 @@ public class SubjectofWires extends AppCompatActivity {
         PRICEbar = (SeekBar)findViewById(R.id.WireNumberSlider);
         TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
         lastwiretext.setText("");
-
-
-
     }
 
     public void GetControls(View v){

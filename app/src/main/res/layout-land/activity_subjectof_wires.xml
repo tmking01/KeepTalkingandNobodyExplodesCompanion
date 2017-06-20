@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.SubjectofWires">
+    tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.SubjectofWires"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="73dp">
 
     <SeekBar
         android:id="@+id/WireNumberSlider"
@@ -15,90 +17,256 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="0dp"
         android:max="@integer/Max"
         android:progress="1"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="181dp"
+        android:layout_height="27dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/WiresHeader"
-        app:layout_constraintHorizontal_bias="0.501"
+        android:text="Number of Wires (3-4-5-6)"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/LastWire"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="187dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/WiresResult"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="392dp"
-        android:layout_height="48dp"
+        android:layout_width="217dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:onClick="GetControls"
+        android:text="Populate Controls"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WireNumberSlider"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="38dp"
+        android:text="WireOne"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/WireFourtext"
+        android:layout_width="75dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="2dp"
+        android:text="WireFour"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toRightOf="@+id/textView4"
+        android:layout_marginLeft="35dp" />
+
+    <TextView
+        android:id="@+id/WireFivetext"
+        android:layout_width="74dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="8dp"
+        android:text="WireFive"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintRight_toLeftOf="@+id/Wiresixtext"
+        app:layout_constraintLeft_toRightOf="@+id/WireFourtext"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.492" />
+
+    <TextView
+        android:id="@+id/Wiresixtext"
+        android:layout_width="57dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_marginRight="34dp"
+        android:text="WireSix"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginBottom="0dp"
+        android:text="WireTwo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintLeft_toRightOf="@+id/textView2"
+        android:layout_marginLeft="57dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="69dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="-1dp"
+        android:text="WireThree"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintLeft_toRightOf="@+id/textView3"
+        android:layout_marginLeft="62dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <Button
+        android:id="@+id/GetWireResults"
+        android:layout_width="282dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="GetControls"
-        android:text="@string/PopulateControls"
+        android:onClick="getresults"
+        android:text="GetResults"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/LastWire"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WireNumberSlider" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="93dp" />
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="110dp"
+        android:id="@+id/WireOne"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        android:id="@+id/WireTwo"
-        app:layout_constraintLeft_toRightOf="@+id/WireOne"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/WireThree"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
-            android:id="@+id/twoblue"
-            android:layout_width="59dp"
-            android:layout_height="27dp"
+            android:id="@+id/Oneblue"
+            android:layout_height="15dp"
             android:layout_weight="1"
             android:checked="true"
             android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
+            android:text="Blue"
+            android:textColor="@android:color/holo_blue_dark"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
+            android:id="@+id/oneyellow"
+            android:layout_height="15dp"
+            android:layout_weight="1"
+            android:text="Yellow"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
+            android:id="@+id/onegreen"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="Green"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
+            android:id="@+id/onewhite"
+            android:layout_height="15dp"
+            android:layout_weight="1"
+            android:text="White"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="263dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
+            android:id="@+id/onered"
+            android:layout_height="15dp"
+            android:layout_weight="1"
+            android:text="Red"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="162dp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/WireTwo"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintLeft_toRightOf="@+id/WireOne"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RadioButton
+            android:id="@+id/twoblue"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:text="Blue"
+            android:textAllCaps="true"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
-            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteX="263dp"
             tools:layout_editor_absoluteY="162dp" />
 
         <RadioButton
             android:id="@+id/twoyellow"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorYellow"
+            android:text="Yellow"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="14sp"
@@ -109,7 +277,7 @@
             android:id="@+id/twogreen"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorGreen"
+            android:text="Green"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp"
@@ -117,10 +285,11 @@
             tools:layout_editor_absoluteY="162dp" />
 
         <RadioButton
-            android:id="@+id/twowhite"
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorWhite"
+            android:text="White"
             android:textAllCaps="true"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="263dp"
@@ -128,9 +297,9 @@
 
         <RadioButton
             android:id="@+id/twored"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:text="@string/ColorRed"
+            android:layout_width="78dp"
+            android:layout_height="22dp"
+            android:text="Red"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
@@ -141,13 +310,15 @@
 
     <RadioGroup
         android:id="@+id/WireThree"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp">
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintLeft_toRightOf="@+id/WireTwo"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
             android:id="@+id/threeblue"
@@ -155,8 +326,8 @@
             android:layout_weight="1"
             android:checked="true"
             android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
+            android:lineSpacingExtra="0sp"
+            android:text="Blue"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="16dp"
@@ -166,7 +337,7 @@
             android:id="@+id/threeyellow"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorYellow"
+            android:text="Yellow"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="14sp"
@@ -175,9 +346,9 @@
 
         <RadioButton
             android:id="@+id/threegreen"
+            android:layout_width="wrap_content"
             android:layout_height="27dp"
-            android:layout_weight="1"
-            android:text="@string/ColorGreen"
+            android:text="Green"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp"
@@ -188,7 +359,7 @@
             android:id="@+id/threewhite"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorWhite"
+            android:text="White"
             android:textAllCaps="true"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="263dp"
@@ -198,7 +369,7 @@
             android:id="@+id/threered"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorRed"
+            android:text="Red"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
@@ -206,104 +377,30 @@
             tools:layout_editor_absoluteY="162dp" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireOne"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WireOne" />
-
-    <TextView
-        android:id="@+id/WireFourtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireFour"
-        android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WireFour" />
-
-    <TextView
-        android:id="@+id/WireFivetext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireFive"
-        android:visibility="invisible"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintLeft_toRightOf="@+id/WireFourtext"
-        app:layout_constraintRight_toLeftOf="@+id/Wiresixtext"
-        app:layout_constraintTop_toBottomOf="@+id/WireFive" />
-
-    <TextView
-        android:id="@+id/Wiresixtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireSix"
-        android:visibility="invisible"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WireSix" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireTwo"
-        app:layout_constraintLeft_toRightOf="@+id/textView2"
-        app:layout_constraintRight_toLeftOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/WireTwo" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/WireThree"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WireThree" />
-
     <RadioGroup
         android:id="@+id/WireFive"
-        android:layout_width="wrap_content"
-        android:layout_height="110dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginTop="8dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/WireFivetext"
         app:layout_constraintLeft_toRightOf="@+id/WireFour"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0"
         app:layout_constraintRight_toLeftOf="@+id/WireSix"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        android:layout_marginRight="8dp">
 
         <RadioButton
             android:id="@+id/fiveblue"
+            android:layout_width="59dp"
             android:layout_height="27dp"
             android:layout_weight="1"
             android:checked="true"
             android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
+            android:lineSpacingExtra="0sp"
+            android:text="Blue"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="16dp"
@@ -313,7 +410,7 @@
             android:id="@+id/fiveyellow"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorYellow"
+            android:text="Yellow"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="14sp"
@@ -324,7 +421,7 @@
             android:id="@+id/fivegreen"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorGreen"
+            android:text="Green"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp"
@@ -335,7 +432,7 @@
             android:id="@+id/fivewhite"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorWhite"
+            android:text="White"
             android:textAllCaps="true"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="263dp"
@@ -345,7 +442,7 @@
             android:id="@+id/fivered"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorRed"
+            android:text="Red"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
@@ -354,34 +451,27 @@
 
     </RadioGroup>
 
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline3"
-        app:layout_constraintGuide_begin="282dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteY="282dp"
-        tools:layout_editor_absoluteX="0dp" />
-
     <RadioGroup
         android:id="@+id/WireFour"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="37dp"
         android:layout_marginTop="8dp"
         android:visibility="invisible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        android:layout_marginStart="16dp">
+        app:layout_constraintBottom_toTopOf="@+id/WireFourtext"
+        app:layout_constraintLeft_toRightOf="@+id/WireThree"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
             android:id="@+id/fourblue"
+            android:layout_width="59dp"
             android:layout_height="27dp"
             android:layout_weight="1"
             android:checked="true"
             android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
+            android:text="Blue"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="16dp"
@@ -391,7 +481,7 @@
             android:id="@+id/fouryellow"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorYellow"
+            android:text="Yellow"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="14sp"
@@ -402,7 +492,7 @@
             android:id="@+id/fourgreen"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorGreen"
+            android:text="Green"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp"
@@ -413,7 +503,7 @@
             android:id="@+id/fourwhite"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorWhite"
+            android:text="White"
             android:textAllCaps="true"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="263dp"
@@ -423,54 +513,48 @@
             android:id="@+id/fourred"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorRed"
+            android:text="Red"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="212dp"
             tools:layout_editor_absoluteY="162dp" />
+
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/WireSix"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="95dp"
+        android:layout_height="135dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
+        android:layout_weight="1"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/Wiresixtext"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        android:layout_marginEnd="8dp">
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="1.0">
 
         <RadioButton
             android:id="@+id/sixblue"
+            android:layout_width="59dp"
             android:layout_height="27dp"
             android:layout_weight="1"
             android:checked="true"
             android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
+            android:lineSpacingExtra="0sp"
+            android:text="Blue"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="162dp" />
 
         <RadioButton
-            android:id="@+id/sixyellow"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:text="@string/ColorYellow"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
             android:id="@+id/sixgreen"
             android:layout_height="27dp"
             android:layout_weight="1"
-            android:text="@string/ColorGreen"
+            android:text="Green"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="14sp"
@@ -478,10 +562,21 @@
             tools:layout_editor_absoluteY="162dp" />
 
         <RadioButton
+            android:id="@+id/sixyellow"
+            android:layout_height="27dp"
+            android:layout_weight="1"
+            android:text="Yellow"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
             android:id="@+id/sixwhite"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorWhite"
+            android:text="White"
             android:textAllCaps="true"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="263dp"
@@ -491,92 +586,13 @@
             android:id="@+id/sixred"
             android:layout_height="28dp"
             android:layout_weight="1"
-            android:text="@string/ColorRed"
+            android:text="Red"
             android:textAllCaps="true"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="212dp"
             tools:layout_editor_absoluteY="162dp" />
-    </RadioGroup>
 
-    <Button
-        android:id="@+id/GetWireResults"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:onClick="getresults"
-        android:text="@string/GetResults"
-        app:layout_constraintBottom_toTopOf="@+id/LastWire"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/WireOne"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8">
-
-        <RadioButton
-            android:id="@+id/Oneblue"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:checked="true"
-            android:duplicateParentState="false"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/ColorBlue"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
-            android:id="@+id/oneyellow"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:text="@string/ColorYellow"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
-            android:id="@+id/onegreen"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:text="@string/ColorGreen"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
-            android:id="@+id/onewhite"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:text="@string/ColorWhite"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="263dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
-            android:id="@+id/onered"
-            android:layout_height="28dp"
-            android:layout_weight="1"
-            android:text="@string/ColorRed"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="212dp"
-            tools:layout_editor_absoluteY="162dp" />
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

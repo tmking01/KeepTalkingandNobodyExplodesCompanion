@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Keep Talking and Nobody Explodes Companion</string>
+    <string name="title_activity_wires_1">Wires_1</string>
+    <string name="TapMe">Tap me!</string>
+    <string name="CutSecondWire">Cut the Second Wire</string>
+    <string name="Cutthelastwire">Cut The Last Wire</string>
+    <string name="WiresResult">Cut The Second Wire</string>
+    <string name="Sumit">Get Result</string>
+
+
+</resources>

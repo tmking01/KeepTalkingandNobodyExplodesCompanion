@@ -4,25 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.Buttons"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
-
-    <Spinner
-        android:id="@+id/ColorCBX"
-        android:layout_width="395dp"
-        android:layout_height="24dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="40dp" />
-
-    <TextView
-        android:id="@+id/colorLBL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_Color"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/ColorCBX"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ColorCBX" />
+    tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.Buttons">
 
 </android.support.constraint.ConstraintLayout>

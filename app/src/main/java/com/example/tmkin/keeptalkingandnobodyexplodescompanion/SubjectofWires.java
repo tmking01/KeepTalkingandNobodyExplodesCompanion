@@ -3,6 +3,7 @@ package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -29,7 +30,8 @@ public class SubjectofWires extends AppCompatActivity {
     public void GetControls(View v){
         Switch onOffSwitch = (Switch)  findViewById(R.id.HasRedwire);
         onOffSwitch.setVisibility(View.VISIBLE);
-
+        Button GetResults = (Button)  findViewById(R.id.GetResult);
+        GetResults.setVisibility(View.VISIBLE);
     }
 
 

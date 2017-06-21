@@ -6,6 +6,21 @@
     <string name="Cutthelastwire">Cut The Last Wire</string>
     <string name="WiresResult">Cut The Second Wire</string>
     <string name="Sumit">Get Result</string>
+
+    <string name="ColorBlue">Blue</string>
+    <string name="ColorYellow">Yellow</string>
+    <string name="ColorGreen">Green</string>
+    <string name="ColorWhite">White</string>
+    <string name="ColorRed">Red</string>
+    <string name="WiresHeader">Number of Wires (3-4-5-6)</string>
+    <string name="PopulateControls">Populate Controls</string>
+    <string name="GetResults">GetResults</string>
+    <string name="WireOne">WireOne</string>
+    <string name="WireTwo">WireTwo</string>
+    <string name="WireThree">WireThree</string>
+    <string name="WireFour">WireFour</string>
+    <string name="WireFive">WireFive</string>
+    <string name="WireSix">WireSix</string>
     <string name="ContainsVowel">Does Serial Number Contain a Vowel?</string>
     <string name="MoreThanOneBat">More Than one Battery?</string>
     <string name="EvenSerialNum">Last Digit in Serial Number Even?</string>
@@ -24,4 +39,5 @@
     <string name="WireSequencesCMD">Wire Sequences</string>
     <string name="MazesCMD">Mazes</string>
     <string name="PasswordsCMD">Passwords</string>
+
 </resources>

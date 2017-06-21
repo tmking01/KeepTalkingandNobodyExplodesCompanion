@@ -264,6 +264,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="9dp"
         android:background="@color/ButtonBackground"
+        android:onClick="sendMessage"
         android:text="@string/WireSequencesCMD"
         android:textColor="@color/ButtonText"
         app:layout_constraintBottom_toTopOf="@+id/PasswordCMD"

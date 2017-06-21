@@ -6,6 +6,22 @@
     <string name="Cutthelastwire">Cut The Last Wire</string>
     <string name="WiresResult">Cut The Second Wire</string>
     <string name="Sumit">Get Result</string>
-
-
+    <string name="ContainsVowel">Does Serial Number Contain a Vowel?</string>
+    <string name="MoreThanOneBat">More Than one Battery?</string>
+    <string name="EvenSerialNum">Last Digit in Serial Number Even?</string>
+    <string name="OnTheSubjectOfWire">On the Subject of Wires</string>
+    <string name="Strike1Slide">Strike 1</string>
+    <string name="Strike2Slide">Strike 2</string>
+    <string name="OnTheSubjectOf">On the Subject of...</string>
+    <string name="WiresCMD">Wires</string>
+    <string name="ButtonCMD">Button</string>
+    <string name="KeypadsCMD">Keypads</string>
+    <string name="SimonSaysCMD">Simon Says</string>
+    <string name="WhoisOn1stCMD">Who is on 1st</string>
+    <string name="MemoryCMD">Memory</string>
+    <string name="MorseCodeCMD">Morse Code</string>
+    <string name="ComplexWires">Complex Wires</string>
+    <string name="WireSequencesCMD">Wire Sequences</string>
+    <string name="MazesCMD">Mazes</string>
+    <string name="PasswordsCMD">Passwords</string>
 </resources>

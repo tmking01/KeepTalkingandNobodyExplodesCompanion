@@ -39,5 +39,14 @@
     <string name="WireSequencesCMD">Wire Sequences</string>
     <string name="MazesCMD">Mazes</string>
     <string name="PasswordsCMD">Passwords</string>
+    <string name="BTNColor">Button Color</string>
+    <string name="BTNBlue">Blue</string>
+    <string name="OtherColor">Other Color</string>
+    <string name="BTNAbort">Abort</string>
+    <string name="BTNDetonate">Detonate</string>
+    <string name="BTNHold">Hold</string>
+    <string name="BTNOther">Other Text</string>
+    <string name="BTNSteup">Setup</string>
+    <string name="LabelSteup">Steup Questions</string>
 
 </resources>

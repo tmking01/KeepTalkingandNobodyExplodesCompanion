@@ -48,5 +48,8 @@
     <string name="BTNOther">Other Text</string>
     <string name="BTNSteup">Setup</string>
     <string name="LabelSteup">Steup Questions</string>
+    <string name="ButtonName">Button Text</string>
+    <string name="ButtonStripColor">Strip Color</string>
+    <string name="ButtonSolution">Answer</string>
 
 </resources>

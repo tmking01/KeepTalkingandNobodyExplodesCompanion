@@ -42,14 +42,15 @@
         android:layout_marginTop="8dp"
         android:background="@color/ButtonBackground"
         android:fontFamily="monospace"
+        android:onClick="sendMessage"
         android:text="Setup"
         android:textColor="@color/ButtonText"
         android:textSize="30sp"
         android:typeface="normal"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/ComplexCMD"

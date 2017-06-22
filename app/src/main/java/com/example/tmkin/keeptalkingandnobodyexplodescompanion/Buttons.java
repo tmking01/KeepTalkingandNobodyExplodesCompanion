@@ -30,6 +30,8 @@ public class Buttons extends AppCompatActivity {
         TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
         mylabelone.setVisibility(View.VISIBLE);
         mylabelone.setText("Press and Hold!");
+        TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+        mylabeltwo.setVisibility(View.INVISIBLE);
         //This is done.
     }
     public void btnDetonate(View v){
@@ -48,6 +50,8 @@ public class Buttons extends AppCompatActivity {
             TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
             mylabelone.setVisibility(View.VISIBLE);
             mylabelone.setText("Press and Release!");
+            TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+            mylabeltwo.setVisibility(View.INVISIBLE);
         } else {
             //If more than 2 batteries and a lit indicator of FRK
             if (2 == 2) {
@@ -63,6 +67,8 @@ public class Buttons extends AppCompatActivity {
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
                 mylabelone.setText("Press and Release!");
+                TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+                mylabeltwo.setVisibility(View.INVISIBLE);
             } else {
                 Button myButtonone = (Button) findViewById(R.id.btnBlue);
                 myButtonone.setVisibility(View.VISIBLE);
@@ -75,6 +81,8 @@ public class Buttons extends AppCompatActivity {
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
                 mylabelone.setText("Press and Hold!");
+                TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+                mylabeltwo.setVisibility(View.INVISIBLE);
             }
         }
     }
@@ -94,6 +102,8 @@ public class Buttons extends AppCompatActivity {
             TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
             mylabelone.setVisibility(View.VISIBLE);
             mylabelone.setText("Press and Release!");
+            TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+            mylabeltwo.setVisibility(View.INVISIBLE);
         } else {
             //If more than 2 batteries and a lit indicator of FRK
             if (2 == 2) {
@@ -109,6 +119,8 @@ public class Buttons extends AppCompatActivity {
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
                 mylabelone.setText("Press and Release!");
+                TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+                mylabeltwo.setVisibility(View.INVISIBLE);
             } else {
                 Button myButtonone = (Button) findViewById(R.id.btnBlue);
                 myButtonone.setVisibility(View.VISIBLE);
@@ -121,6 +133,8 @@ public class Buttons extends AppCompatActivity {
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
                 mylabelone.setText("Press and Hold!");
+                TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+                mylabeltwo.setVisibility(View.INVISIBLE);
             }
         }
 
@@ -138,6 +152,8 @@ public class Buttons extends AppCompatActivity {
         TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
         mylabelone.setVisibility(View.VISIBLE);
         mylabelone.setText("Press and Hold!");
+        TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
+        mylabeltwo.setVisibility(View.INVISIBLE);
     }
     public void btnBlue(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);

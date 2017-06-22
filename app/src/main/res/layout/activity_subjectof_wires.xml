@@ -111,8 +111,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 
@@ -179,8 +180,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 
@@ -326,8 +328,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 
@@ -404,8 +407,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 
@@ -472,8 +476,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 
@@ -553,8 +558,9 @@
             android:layout_weight="1"
             android:text="@string/ColorGreen"
             android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
 

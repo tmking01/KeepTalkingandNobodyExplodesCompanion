@@ -17,7 +17,8 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginEnd="8dp">
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp">
 
         <RadioButton
             android:id="@+id/Oneblue"
@@ -44,17 +45,6 @@
             tools:layout_editor_absoluteY="162dp" />
 
         <RadioButton
-            android:id="@+id/onegreen"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:text="@string/ColorGreen"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="14sp"
-            tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="162dp" />
-
-        <RadioButton
             android:id="@+id/onewhite"
             android:layout_height="28dp"
             android:layout_weight="1"
@@ -73,6 +63,17 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <RadioButton
+            android:id="@+id/onegreen"
+            android:layout_height="27dp"
+            android:layout_weight="1"
+            android:text="@string/OtherColor"
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="162dp" />
     </RadioGroup>
 

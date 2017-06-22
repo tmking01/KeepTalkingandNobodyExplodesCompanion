@@ -5,80 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.MainActivity"
-    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp">
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="300dp"
-        android:layout_height="27dp"
-        android:text="@string/ContainsVowel"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <Switch
-        android:id="@+id/switch3"
-        android:layout_width="300dp"
-        android:layout_height="27dp"
-        android:text="@string/MoreThanOneBat"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/switch1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <Switch
-        android:id="@+id/switch4"
-        android:layout_width="300dp"
-        android:layout_height="27dp"
-        android:checked="false"
-        android:text="@string/EvenSerialNum"
-        tools:ignore="MissingConstraints"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/switch3"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginStart="69dp"
-        android:checked="false"
-        android:text="@string/Strike1Slide"
-        android:textColorLink="@color/ButtonSelected"
-        app:layout_constraintBottom_toTopOf="@+id/switch4"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/Strike2Slide"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox2"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.532"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/switch4" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -95,181 +23,131 @@
         android:id="@+id/guideline2"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="587dp"
-        tools:layout_editor_absoluteY="-75dp"
+        tools:layout_editor_absoluteY="-19dp"
         tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/ButtonBackground"
-        android:text="@string/OnTheSubjectOf"
-        android:textAlignment="center"
-        android:textColor="@color/ButtonText"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ButtonCMD"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="@string/OnTheSubjectOf" />
 
     <Button
         android:id="@+id/CompWireCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="13dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
         android:text="@string/ComplexWires"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/MemoryCMD"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_editor_absoluteY="386dp"
+        tools:layout_editor_absoluteX="228dp" />
 
     <Button
         android:id="@+id/ButtonCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/ButtonBackground"
         android:text="@string/ButtonCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/SimonCMD"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/MazeCMD" />
+        tools:layout_editor_absoluteY="272dp"
+        tools:layout_editor_absoluteX="53dp" />
 
     <Button
         android:id="@+id/MazeCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
         android:background="@color/ButtonBackground"
         android:text="@string/MazesCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/MorseCMD"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:layout_editor_absoluteY="272dp"
+        tools:layout_editor_absoluteX="228dp" />
 
     <Button
         android:id="@+id/KeypadCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
         android:text="@string/KeypadsCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_editor_absoluteY="503dp"
+        tools:layout_editor_absoluteX="228dp" />
 
     <Button
         android:id="@+id/MemoryCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
         android:text="@string/MemoryCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/KeypadCMD"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_editor_absoluteY="447dp"
+        tools:layout_editor_absoluteX="228dp" />
 
     <Button
         android:id="@+id/MorseCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
         android:text="@string/MorseCodeCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/CompWireCMD"
-        app:layout_constraintRight_toRightOf="parent" />
+        tools:layout_editor_absoluteY="328dp"
+        tools:layout_editor_absoluteX="228dp" />
 
     <Button
         android:id="@+id/PasswordCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/ButtonBackground"
         android:text="@string/PasswordsCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/KeypadCMD" />
+        tools:layout_editor_absoluteY="503dp"
+        tools:layout_editor_absoluteX="50dp" />
 
     <Button
         android:id="@+id/SimonCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/ButtonBackground"
         android:text="@string/SimonSaysCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/WhoCMD"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/MorseCMD" />
+        tools:layout_editor_absoluteY="328dp"
+        tools:layout_editor_absoluteX="53dp" />
 
     <Button
         android:id="@+id/WhoCMD"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="13dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:background="@color/ButtonBackground"
         android:text="@string/WhoisOn1stCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/button15"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/CompWireCMD"
-        app:layout_constraintHorizontal_bias="0.464" />
+        tools:layout_editor_absoluteY="386dp"
+        tools:layout_editor_absoluteX="50dp" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="140dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="9dp"
         android:background="@color/ButtonBackground"
         android:onClick="sendMessage"
         android:text="@string/WireSequencesCMD"
         android:textColor="@color/ButtonText"
-        app:layout_constraintBottom_toTopOf="@+id/PasswordCMD"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/MemoryCMD" />
+        tools:layout_editor_absoluteY="447dp"
+        tools:layout_editor_absoluteX="53dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="97dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/ButtonBackground"
+        android:text="Button"
+        android:textColor="@color/ButtonText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </android.support.constraint.ConstraintLayout>
 

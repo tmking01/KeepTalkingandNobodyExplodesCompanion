@@ -8,6 +8,7 @@
     tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp">
 
+
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
+
         android:layout_height="97dp"
         android:scaleType="fitCenter"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -125,6 +127,146 @@
         app:srcCompat="@drawable/mazes"
         app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
         android:layout_marginEnd="16dp" />
+=======
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/ButtonCMD"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <Button
+        android:id="@+id/KeypadCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/KeypadsCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/MemoryCMD"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/PasswordCMD"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/MemoryCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/MemoryCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/CompWireCMD"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button15"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <Button
+        android:id="@+id/MorseCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/MorseCodeCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/MazeCMD"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/SimonCMD"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <Button
+        android:id="@+id/PasswordCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/PasswordsCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/button15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/SimonCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/SimonSaysCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonCMD"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/WhoCMD"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/ButtonBackground"
+        android:text="@string/WhoisOn1stCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/SimonCMD"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="9dp"
+        android:background="@color/ButtonBackground"
+        android:onClick="sendMessage"
+        android:text="@string/WireSequencesCMD"
+        android:textColor="@color/ButtonText"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/WhoCMD" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline7"
+        app:layout_constraintGuide_begin="515dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline8"
+        app:layout_constraintGuide_begin="65dp"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline9"
+        app:layout_constraintGuide_begin="179dp"
+        android:orientation="horizontal" />
+
 
 </android.support.constraint.ConstraintLayout>
 

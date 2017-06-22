@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="25dp">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="587dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-19dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="97dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/header" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/ButtonBackground"
+            android:fontFamily="monospace"
+            android:text="Setup"
+            android:textColor="@color/ButtonText"
+            android:textSize="30sp"
+            android:typeface="normal"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageButton
+            android:id="@+id/ComplexCMD"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="false"
+            android:background="@color/ButtonBackground"
+            android:contentDescription="Complex Wires"
+            android:cropToPadding="false"
+            android:elevation="0dp"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ComplexTextView"
+            app:srcCompat="@drawable/complexwires" />
+
+        <TextView
+            android:id="@+id/ComplexTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/ComplexWires"
+            app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <TextView
+            android:id="@+id/EasyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <ImageButton
+            android:id="@+id/EasyWireCMD"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/ButtonBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintLeft_toRightOf="@+id/ComplexCMD"
+            app:layout_constraintRight_toLeftOf="@+id/MazeCMD"
+            app:layout_constraintTop_toBottomOf="@+id/EasyTextView"
+            app:srcCompat="@drawable/simplewires" />
+
+        <TextView
+            android:id="@+id/MazeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/MazesCMD"
+            app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <ImageButton
+            android:id="@+id/MazeCMD"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/ButtonBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
+            app:srcCompat="@drawable/mazes" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

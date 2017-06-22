@@ -5,40 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.MainActivity"
-    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:checked="false"
-        android:text="@string/Strike1Slide"
-        android:textColorLink="@color/ButtonSelected"
-        android:layout_marginLeft="69dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/Strike2Slide"
-        android:layout_marginRight="7dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/checkBox"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.496"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -55,88 +24,110 @@
         android:id="@+id/guideline2"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="587dp"
-        tools:layout_editor_absoluteY="-75dp"
+        tools:layout_editor_absoluteY="-19dp"
         tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:id="@+id/textView8"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+
+        android:layout_height="97dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header" />
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/ButtonBackground"
-        android:text="@string/OnTheSubjectOf"
-        android:textAlignment="center"
-        android:textColor="@color/ButtonText"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="@string/OnTheSubjectOf"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        android:layout_marginTop="8dp" />
-
-    <Button
-        android:id="@+id/CompWireCMD"
-        android:layout_width="140dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/ButtonBackground"
-        android:text="@string/ComplexWires"
-        android:textColor="@color/ButtonText"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/MorseCMD"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/WhoCMD"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="1.0" />
-
-    <Button
-        android:id="@+id/ButtonCMD"
-        android:layout_width="140dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="9dp"
-        android:background="@color/ButtonBackground"
-        android:onClick="BTN"
-        android:text="@string/ButtonCMD"
-        android:textColor="@color/ButtonText"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="323dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="9dp"
         android:layout_marginTop="8dp"
         android:background="@color/ButtonBackground"
-        android:onClick="Setupquestions"
-        android:text="@string/BTNSteup"
+        android:fontFamily="monospace"
+        android:text="Setup"
         android:textColor="@color/ButtonText"
-        app:layout_constraintHorizontal_bias="0.513"
+        android:textSize="30sp"
+        android:typeface="normal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/ComplexCMD"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="16dp"
+        android:adjustViewBounds="false"
+        android:background="@color/ButtonBackground"
+        android:contentDescription="Complex Wires"
+        android:cropToPadding="false"
+        android:elevation="0dp"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ComplexTextView"
+        app:srcCompat="@drawable/complexwires"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/ComplexTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ComplexWires"
+        app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/EasyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageButton
+        android:id="@+id/EasyWireCMD"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/ButtonBackground"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintLeft_toRightOf="@+id/ComplexCMD"
+        app:layout_constraintRight_toLeftOf="@+id/MazeCMD"
+        app:layout_constraintTop_toBottomOf="@+id/EasyTextView"
+        app:srcCompat="@drawable/simplewires" />
+
+    <TextView
+        android:id="@+id/MazeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MazesCMD"
+        app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageButton
         android:id="@+id/MazeCMD"
-        android:layout_width="140dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
-        android:text="@string/MazesCMD"
-        android:textColor="@color/ButtonText"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/mazes"
+        app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
+        android:layout_marginEnd="16dp" />
+=======
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         android:layout_marginTop="8dp"
@@ -275,6 +266,7 @@
         android:id="@+id/guideline9"
         app:layout_constraintGuide_begin="179dp"
         android:orientation="horizontal" />
+
 
 </android.support.constraint.ConstraintLayout>
 

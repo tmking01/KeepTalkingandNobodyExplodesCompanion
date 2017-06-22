@@ -56,18 +56,19 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:adjustViewBounds="false"
         android:background="@color/ButtonBackground"
         android:contentDescription="Complex Wires"
         android:cropToPadding="false"
         android:elevation="0dp"
+        android:onClick="sendMessage"
         android:padding="10dp"
         android:scaleType="fitCenter"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ComplexTextView"
-        app:srcCompat="@drawable/complexwires"
-        android:layout_marginStart="16dp" />
+        app:srcCompat="@drawable/complexwires" />
 
     <TextView
         android:id="@+id/ComplexTextView"
@@ -95,6 +96,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:background="@color/ButtonBackground"
+        android:onClick="onbuttontap"
         android:padding="10dp"
         android:scaleType="fitCenter"
         app:layout_constraintDimensionRatio="w,1:1"
@@ -116,14 +118,15 @@
         android:id="@+id/MazeCMD"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/ButtonBackground"
+        android:onClick="BTN"
         android:padding="10dp"
         android:scaleType="fitCenter"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/mazes"
         app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
-        android:layout_marginEnd="16dp" />
+        app:srcCompat="@drawable/mazes" />
 
 </android.support.constraint.ConstraintLayout>

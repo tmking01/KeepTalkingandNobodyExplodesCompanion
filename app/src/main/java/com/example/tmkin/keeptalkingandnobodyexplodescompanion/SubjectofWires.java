@@ -162,12 +162,12 @@ public class SubjectofWires extends AppCompatActivity {
         if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Yellow"))YellowCounter++;}
         if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Yellow"))YellowCounter++;}
         int GreenCounter = 0;
-        if(WireOneColor.getText().equals("Green"))GreenCounter++;
-        if(WireTwoColor.getText().equals("Green"))GreenCounter++;
-        if(WireThreeColor.getText().equals("Green"))GreenCounter++;
-        if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Green"))GreenCounter++;}
-        if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Green"))GreenCounter++;}
-        if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Green"))GreenCounter++;}
+        if(WireOneColor.getText().equals("Black"))GreenCounter++;
+        if(WireTwoColor.getText().equals("Black"))GreenCounter++;
+        if(WireThreeColor.getText().equals("Black"))GreenCounter++;
+        if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Black"))GreenCounter++;}
+        if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Black"))GreenCounter++;}
+        if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Black"))GreenCounter++;}
         int WhiteCounter = 0;
         if(WireOneColor.getText().equals("White"))WhiteCounter++;
         if(WireTwoColor.getText().equals("White"))WhiteCounter++;
@@ -193,28 +193,55 @@ public class SubjectofWires extends AppCompatActivity {
         }
 
         if (wireNumberSlider == 4){
-            if (RedCounter > 1){
-                if (2 > 1){ //need to add logic for serial number slider
+            if (RedCounter > 1 && 1 == 1){
                     TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
                     lastwiretext.setText("Cut the Second Wire!");
-                }
             } else if (WireFourColor.getText().equals("Yellow")){
-                if (RedCounter == 0){ //need to add logic for serial number slider
                     TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
                     lastwiretext.setText("Cut the First Wire!");
-                }
-            } else if (BlueCounter > 1){
+            } else if (BlueCounter == 1){
                 TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
-                lastwiretext.setText("Cut the Last Blue Wire!");
-            } else {
+                lastwiretext.setText("Cut the First Wire!");
+            } else if (YellowCounter > 1){
                 TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
                 lastwiretext.setText("Cut the Last Wire!");
+            } else {
+                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                lastwiretext.setText("Cut the Second Wire!!");
             }
         }
 
+        if (wireNumberSlider == 5){
+            if (WireFiveColor.getText().equals("Black") && 1 == 1){
+                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    lastwiretext.setText("Cut the Fourth Wire!");
+            } else if (RedCounter == 1 && YellowCounter > 1){
+                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    lastwiretext.setText("Cut the First Wire!");
+            } else if (GreenCounter == 0){
+                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                lastwiretext.setText("Cut the Second Wire!");
+            }  else {
+                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                lastwiretext.setText("Cut the First Wire!!");
+            }
+        }
 
-
-
+        if (wireNumberSlider == 6){
+            if (YellowCounter == 0 && 1 == 1){
+                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    lastwiretext.setText("Cut the Thrid Wire!");
+            } else if (YellowCounter == 1 && WhiteCounter < 2){
+                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    lastwiretext.setText("Cut the Fourth Wire!");
+            } else if (RedCounter == 0){
+                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                lastwiretext.setText("Cut the Last Wire!");
+            }  else {
+                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                lastwiretext.setText("Cut the Fourth Wire!!");
+            }
+        }
 
     }
 

@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-}
 
     public void Setupquestions(View view) {
         Intent intent = new Intent(this, Setup.class);

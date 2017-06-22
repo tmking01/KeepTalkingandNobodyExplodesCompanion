@@ -27,5 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SubjectofWires.class);
         startActivity(intent);
     }
-
+    public void BTN(View view) {
+        Intent intent = new Intent(this, Buttons.class);
+        startActivity(intent);
+    }
 }

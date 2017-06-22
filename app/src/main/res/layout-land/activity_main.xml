@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/header" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnBlue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="0dp"
@@ -111,7 +111,7 @@
         android:layout_marginBottom="-1dp"
         app:layout_constraintBottom_toTopOf="@+id/MazeCMD"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
 
     <ImageButton
         android:id="@+id/MazeCMD"

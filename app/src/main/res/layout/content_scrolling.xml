@@ -45,7 +45,7 @@
             app:srcCompat="@drawable/header" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -85,7 +85,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/ComplexWires"
             app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
 
         <TextView
             android:id="@+id/EasyTextView"
@@ -94,7 +94,7 @@
             android:layout_marginTop="8dp"
             android:text="TextView"
             app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
 
         <ImageButton
             android:id="@+id/EasyWireCMD"
@@ -119,7 +119,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/MazesCMD"
             app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/btnBlue" />
 
         <ImageButton
             android:id="@+id/MazeCMD"

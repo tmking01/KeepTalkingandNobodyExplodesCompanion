@@ -29,6 +29,7 @@ public class Buttons extends AppCompatActivity {
         myButtonfour.setVisibility(View.VISIBLE);
         TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
         mylabelone.setVisibility(View.VISIBLE);
+        mylabelone.setText("Press and Hold!");
         //This is done.
     }
     public void btnDetonate(View v){
@@ -36,10 +37,32 @@ public class Buttons extends AppCompatActivity {
         //Check if more than one battery
         if (1 == 1) {
             //Press and Release
+            Button myButtonone = (Button) findViewById(R.id.btnBlue);
+            myButtonone.setVisibility(View.INVISIBLE);
+            Button myButtontwo = (Button) findViewById(R.id.btnYellow);
+            myButtontwo.setVisibility(View.INVISIBLE);
+            Button myButtonthree = (Button) findViewById(R.id.btnWhite);
+            myButtonthree.setVisibility(View.INVISIBLE);
+            Button myButtonfour = (Button) findViewById(R.id.btnOtherColor);
+            myButtonfour.setVisibility(View.INVISIBLE);
+            TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
+            mylabelone.setVisibility(View.VISIBLE);
+            mylabelone.setText("Press and Release!");
         } else {
             //If more than 2 batteries and a lit indicator of FRK
             if (2 == 2) {
                 //press and release
+                Button myButtonone = (Button) findViewById(R.id.btnBlue);
+                myButtonone.setVisibility(View.INVISIBLE);
+                Button myButtontwo = (Button) findViewById(R.id.btnYellow);
+                myButtontwo.setVisibility(View.INVISIBLE);
+                Button myButtonthree = (Button) findViewById(R.id.btnWhite);
+                myButtonthree.setVisibility(View.INVISIBLE);
+                Button myButtonfour = (Button) findViewById(R.id.btnOtherColor);
+                myButtonfour.setVisibility(View.INVISIBLE);
+                TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
+                mylabelone.setVisibility(View.VISIBLE);
+                mylabelone.setText("Press and Release!");
             } else {
                 Button myButtonone = (Button) findViewById(R.id.btnBlue);
                 myButtonone.setVisibility(View.VISIBLE);
@@ -51,6 +74,7 @@ public class Buttons extends AppCompatActivity {
                 myButtonfour.setVisibility(View.VISIBLE);
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
+                mylabelone.setText("Press and Hold!");
             }
         }
     }
@@ -59,10 +83,32 @@ public class Buttons extends AppCompatActivity {
         //If the label color is Red - Press and release
         if (1 == 1) {
             //press and release
+            Button myButtonone = (Button) findViewById(R.id.btnBlue);
+            myButtonone.setVisibility(View.INVISIBLE);
+            Button myButtontwo = (Button) findViewById(R.id.btnYellow);
+            myButtontwo.setVisibility(View.INVISIBLE);
+            Button myButtonthree = (Button) findViewById(R.id.btnWhite);
+            myButtonthree.setVisibility(View.INVISIBLE);
+            Button myButtonfour = (Button) findViewById(R.id.btnOtherColor);
+            myButtonfour.setVisibility(View.INVISIBLE);
+            TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
+            mylabelone.setVisibility(View.VISIBLE);
+            mylabelone.setText("Press and Release!");
         } else {
             //If more than 2 batteries and a lit indicator of FRK
             if (2 == 2) {
                 //press and release
+                Button myButtonone = (Button) findViewById(R.id.btnBlue);
+                myButtonone.setVisibility(View.INVISIBLE);
+                Button myButtontwo = (Button) findViewById(R.id.btnYellow);
+                myButtontwo.setVisibility(View.INVISIBLE);
+                Button myButtonthree = (Button) findViewById(R.id.btnWhite);
+                myButtonthree.setVisibility(View.INVISIBLE);
+                Button myButtonfour = (Button) findViewById(R.id.btnOtherColor);
+                myButtonfour.setVisibility(View.INVISIBLE);
+                TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
+                mylabelone.setVisibility(View.VISIBLE);
+                mylabelone.setText("Press and Release!");
             } else {
                 Button myButtonone = (Button) findViewById(R.id.btnBlue);
                 myButtonone.setVisibility(View.VISIBLE);
@@ -74,6 +120,7 @@ public class Buttons extends AppCompatActivity {
                 myButtonfour.setVisibility(View.VISIBLE);
                 TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
                 mylabelone.setVisibility(View.VISIBLE);
+                mylabelone.setText("Press and Hold!");
             }
         }
 
@@ -90,26 +137,27 @@ public class Buttons extends AppCompatActivity {
         myButtonfour.setVisibility(View.VISIBLE);
         TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
         mylabelone.setVisibility(View.VISIBLE);
+        mylabelone.setText("Press and Hold!");
     }
     public void btnBlue(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Blue");
+        mylabelone.setText("Release with 4 in any position");
     }
     public void btnYellow(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Yellow");
+        mylabelone.setText("Release with 1 in any position");
     }
     public void btnWhite(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("White");
+        mylabelone.setText("Release with 5 in any position");
     }
     public void btnOtherColor(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Other");
+        mylabelone.setText("Release with 1 in any position");
     }
 
 

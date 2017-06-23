@@ -145,6 +145,28 @@
     <string name="ButtonStripColor">Strip Color</string>
     <string name="ButtonSolution">Answer</string>
     <string name="PressHold"><![CDATA[Press & Hold]]></string>
+    <string name="LetterA">A</string>
+    <string name="lblPassword1">First Letters</string>
+    <string name="LetterB">B</string>
+    <string name="LetterC">C</string>
+    <string name="LetterE">E</string>
+    <string name="LetterF">F</string>
+    <string name="LetterG">G</string>
+    <string name="LetterH">H</string>
+    <string name="LetterL">L</string>
+    <string name="LetterN">N</string>
+    <string name="LetterO">O</string>
+    <string name="LetterP">P</string>
+    <string name="LetterR">R</string>
+    <string name="LetterS">S</string>
+    <string name="LetterT">T</string>
+    <string name="lblPassword2">Second Letter</string>
+    <string name="LetterW">W</string>
+    <string name="WordFirst">First</string>
+    <string name="WordSecond">Second</string>
+    <string name="WordThrid">Thrid</string>
+    <string name="WordForth">Forth</string>
+    <string name="WordFifth">Fifth</string>
 
 
 </resources>

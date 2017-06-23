@@ -31,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Buttons.class);
         startActivity(intent);
     }
-
+    public void password(View view) {
+        Intent intent = new Intent(this, Password.class);
+        startActivity(intent);
+    }
 
     public void Setupquestions(View view) {
         Intent intent = new Intent(this, Setup.class);

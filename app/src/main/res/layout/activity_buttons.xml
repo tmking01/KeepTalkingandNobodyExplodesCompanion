@@ -131,11 +131,11 @@
         android:text="@string/ColorWhite"
         android:textColor="@android:color/white"
         android:visibility="invisible"
-        app:layout_constraintLeft_toRightOf="@+id/button2"
+        app:layout_constraintLeft_toRightOf="@+id/setupCMD"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/setupCMD"
         android:layout_width="88dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"

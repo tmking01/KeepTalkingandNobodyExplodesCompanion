@@ -7,7 +7,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.MainActivity"
     tools:showIn="@layout/activity_main">
-
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -290,10 +289,7 @@
             app:layout_constraintTop_toBottomOf="@+id/KeyPadtextView"
             android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintDimensionRatio="w,1:1" />
 
         <ImageButton
             android:id="@+id/WireSeqCMD"
@@ -307,9 +303,7 @@
             app:layout_constraintTop_toBottomOf="@+id/WireSeqtextView"
             android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp" />
+            app:layout_constraintDimensionRatio="w,1:1" />
 
         <TextView
             android:id="@+id/MorseCodetextView"

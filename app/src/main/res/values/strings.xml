@@ -27,9 +27,12 @@
     <string name="OnTheSubjectOfWire">On the Subject of Wires</string>
     <string name="Strike1Slide">Strike 1</string>
     <string name="Strike2Slide">Strike 2</string>
+    <!-- ================================================================= -->
+    <!--Strings for the Modules -->
+    <!-- ================================================================= -->
     <string name="OnTheSubjectOf">On the Subject of...</string>
     <string name="WiresCMD">SimpleWires</string>
-    <string name="ButtonCMD">Button</string>
+    <string name="ButtonCMD">Push Button</string>
     <string name="KeypadsCMD">Keypads</string>
     <string name="SimonSaysCMD">Simon Says</string>
     <string name="WhoisOn1stCMD">Who is on 1st</string>
@@ -39,7 +42,7 @@
     <string name="WireSequencesCMD">Wire Sequences</string>
     <string name="MazesCMD">Mazes</string>
     <string name="PasswordsCMD">Passwords</string>
-
+    <!-- ================================================================= -->
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -132,7 +135,13 @@
     </string>
     <string name="action_settings">Settings</string>
 
+
     <string name="BTNColor">What is the Button Color?</string>
+    <!-- ================================================================= -->
+    <!-- Push Button Strings -->
+    <!-- ================================================================= -->
+
+
     <string name="BTNBlue">Blue</string>
     <string name="OtherColor">Other Color</string>
     <string name="BTNAbort">Abort</string>
@@ -144,6 +153,7 @@
     <string name="ButtonName">What is the Button Text?</string>
     <string name="ButtonStripColor">Strip Color</string>
     <string name="ButtonSolution">Answer</string>
+
     <string name="PressHold"><![CDATA[Press & Hold]]></string>
     <string name="LetterA">A</string>
     <string name="lblPassword1">First Letters</string>
@@ -168,5 +178,8 @@
     <string name="WordForth">Forth</string>
     <string name="WordFifth">Fifth</string>
 
+
+
+    <!-- ================================================================= -->
 
 </resources>

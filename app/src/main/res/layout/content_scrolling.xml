@@ -48,7 +48,9 @@
             app:srcCompat="@drawable/header" />
 
         <Button
+
             android:id="@+id/setupCMD"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -94,7 +96,9 @@
             android:textColor="@color/text"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
+
             app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
+
 
         <TextView
             android:id="@+id/EasyTextView"
@@ -105,7 +109,9 @@
             android:textColor="@color/text"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
+
             app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
+
 
         <ImageButton
             android:id="@+id/EasyWireCMD"
@@ -135,7 +141,9 @@
             android:textColor="@color/text"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
+
             app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
+
 
         <ImageButton
             android:id="@+id/MazeCMD"

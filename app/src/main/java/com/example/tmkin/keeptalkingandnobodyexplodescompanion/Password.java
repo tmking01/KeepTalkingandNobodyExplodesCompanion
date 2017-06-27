@@ -31,9 +31,13 @@ public class Password extends AppCompatActivity {
         String Lettersfour = LETTERSFOUR.getText().toString();
         String Lettersfive = LETTERSFIVE.getText().toString();
 
-        String Combo = CleanString(Lettersfive,Lettersfour,Lettersthree,Lettersone);
-        possiblepasswords.setText(Combo);
 
+        if (Lettersone.equals("") || Lettersthree.equals("") || Lettersfour.equals("") || Lettersfive.equals("")){
+            possiblepasswords.setText("Fill out All Fields!");
+        }else {
+            String Combo = CleanString(Lettersfive, Lettersfour, Lettersthree, Lettersone);
+            possiblepasswords.setText(Combo);
+        }
 
 
 
@@ -51,7 +55,8 @@ public class Password extends AppCompatActivity {
         Integer count = 1;
         Integer Number = 5;
         Integer wordsize = Five.length();
-        if (wordsize >= 1) {
+
+        if (Five.length() <= 1 || Five.equals("") ) {
 
             if (Number == 5) {
 
@@ -178,7 +183,7 @@ public class Password extends AppCompatActivity {
                 } while (Answer == "");
             }
         }else {
-            Answer = "";
+            Answer = "Letters Required";
         }
 
 

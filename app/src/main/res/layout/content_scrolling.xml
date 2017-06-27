@@ -38,11 +38,12 @@
         <ImageView
             android:id="@+id/AppLogoIMG"
             android:layout_width="0dp"
-            android:layout_height="97dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="false"
+            android:background="@color/LogoBackground"
             android:contentDescription="@string/app_name"
             android:cropToPadding="false"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/header" />
@@ -53,19 +54,20 @@
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
             android:background="@color/ButtonBackground"
-            android:fontFamily="monospace"
-            android:text="Setup"
+            android:onClick="Setupquestions"
+            android:text="@string/BTNSteup"
             android:textColor="@color/ButtonText"
             android:textSize="30sp"
+            android:textStyle="bold"
             android:typeface="normal"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AppLogoIMG"
-            app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
+            app:layout_constraintTop_toBottomOf="@+id/AppLogoIMG" />
 
         <ImageButton
             android:id="@+id/ComplexCMD"
@@ -93,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/ComplexWires"
-            android:textColor="@color/text"
+            android:textColor="@color/ButtonText"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
 
@@ -106,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/WiresCMD"
-            android:textColor="@color/text"
+            android:textColor="@color/ButtonText"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
 
@@ -138,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/MazesCMD"
-            android:textColor="@color/text"
+            android:textColor="@color/ButtonText"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
 
@@ -151,6 +153,7 @@
             android:layout_height="100dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
             android:contentDescription="Mazes"
             android:onClick="BTN"
@@ -159,41 +162,40 @@
             app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
-            app:srcCompat="@drawable/mazes"
-            android:layout_marginTop="0dp" />
+            app:srcCompat="@drawable/mazes" />
 
         <TextView
             android:id="@+id/PushButtonText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ButtonCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/PushButtonIMG"
-            app:layout_constraintBaseline_toBaselineOf="@+id/MemoryText" />
+            android:text="@string/ButtonCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/MemoryText"
+            app:layout_constraintLeft_toLeftOf="@+id/PushButtonIMG" />
 
         <TextView
             android:id="@+id/MemoryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/MemoryCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/MemoryIMG"
-            app:layout_constraintBaseline_toBaselineOf="@+id/WhosOn1stText" />
+            android:text="@string/MemoryCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/WhosOn1stText"
+            app:layout_constraintLeft_toLeftOf="@+id/MemoryIMG" />
 
         <TextView
             android:id="@+id/WhosOn1stText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/WhoisOn1stCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/WhosonFirstIMG"
             android:layout_marginTop="8dp"
+            android:text="@string/WhoisOn1stCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@+id/WhosonFirstIMG"
             app:layout_constraintTop_toBottomOf="@+id/MazeCMD" />
 
         <ImageButton
@@ -299,10 +301,10 @@
             app:layout_constraintTop_toBottomOf="@+id/KeyPadtextView"
             android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
-            app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="16dp"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintDimensionRatio="w,1:1" />
 
         <ImageButton
             android:id="@+id/WireSeqCMD"
@@ -316,9 +318,10 @@
             app:layout_constraintTop_toBottomOf="@+id/WireSeqtextView"
             android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD"
-            app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintDimensionRatio="w,1:1" />
 
         <TextView
             android:id="@+id/MorseCodetextView"
@@ -327,7 +330,7 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="8dp"
             android:text="@string/MorseCodeCMD"
-            android:textColor="@color/text"
+            android:textColor="@color/ButtonText"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
             app:layout_constraintTop_toBottomOf="@+id/PushButtonIMG" />
@@ -336,33 +339,32 @@
             android:id="@+id/KeyPadtextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/KeypadsCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
+            android:text="@string/KeypadsCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@+id/KeyPadCMD"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/MorseCodeCMD" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/ResetTextView" />
 
         <TextView
             android:id="@+id/SimonSaystextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/SimonSaysCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/SimonSaysCMD"
-            app:layout_constraintBaseline_toBaselineOf="@+id/MorseCodetextView" />
+            android:text="@string/SimonSaysCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/MorseCodetextView"
+            app:layout_constraintLeft_toLeftOf="@+id/SimonSaysCMD" />
 
         <TextView
             android:id="@+id/WireSeqtextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="-1dp"
             android:text="@string/WireSequencesCMD"
-            android:textColor="@color/text"
+            android:textColor="@color/ButtonText"
             android:textStyle="bold"
-            android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="@+id/WireSeqCMD"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/PasswordCMD" />
@@ -371,12 +373,41 @@
             android:id="@+id/PasswordTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/PasswordsCMD"
-            android:textColor="@color/text"
-            android:textStyle="bold"
             android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD"
-            app:layout_constraintBaseline_toBaselineOf="@+id/SimonSaystextView" />
+            android:text="@string/PasswordsCMD"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/SimonSaystextView"
+            app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD" />
+
+        <TextView
+            android:id="@+id/ResetTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Reset"
+            android:textColor="@color/ButtonText"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/WireSeqtextView"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/ResetCMD" />
+
+        <ImageButton
+            android:id="@+id/ResetCMD"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/ButtonBackground"
+            android:onClick="resetGlobals"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintLeft_toLeftOf="@+id/SimonSaysCMD"
+            app:layout_constraintTop_toBottomOf="@+id/ResetTextView"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/reset" />
 
     </android.support.constraint.ConstraintLayout>
 

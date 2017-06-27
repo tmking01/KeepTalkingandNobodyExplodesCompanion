@@ -2,8 +2,10 @@ package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,11 +34,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void Setupquestions(View view) {
-        Intent intent = new Intent(this, Setup.class);
-        startActivity(intent);
+        Intent setupIntent = new Intent(this, Setup.class);
+        startActivity(setupIntent);
     }
 
+    public void resetGlobals(View view){
+        Toast saveMessage = Toast.makeText(getApplicationContext(), "Setup Questions Cleared", Toast.LENGTH_LONG);
+        saveMessage.show();
+        String Answer = "";
+        setGlobals(0, Answer, "SerialNumber");
+        setGlobals(0, Answer, "ContainsVowel");
+        setGlobals(0, Answer, "CARLit");
+        setGlobals(0, Answer, "FRKLit");
+        setGlobals(0, Answer, "ParalellPort");
+    }
+
+    private void setGlobals(int Batteries, String Answer, String ID){
+        Log.d("ID", ID);
+        Log.d("Answer", Answer);
+        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+        SharedPreferences.Editor editor = AnswerStorage.edit().clear();
+        editor.putString(ID, Answer);
+        editor.commit();
+    }
 }
 

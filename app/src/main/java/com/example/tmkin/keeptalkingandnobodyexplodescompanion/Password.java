@@ -170,8 +170,9 @@ public class Password extends AppCompatActivity {
                     }
                     count++;
                     Log.d("ID", count.toString());
-                    if (count == Five.length()) {
+                    if (count == Five.length() && Answer == "") {
                         Answer = "Not Found!";
+                        break;
                     }
                     Log.d("ID", Answer);
                 } while (Answer == "");

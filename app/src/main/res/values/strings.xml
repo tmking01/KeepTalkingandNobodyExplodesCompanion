@@ -177,7 +177,12 @@
     <string name="WordThrid">Thrid</string>
     <string name="WordForth">Forth</string>
     <string name="WordFifth">Fifth</string>
-
+    <string name="PasswordsTitle">Passwords</string>
+    <string name="BTNcheckanswers">Check For Answers</string>
+    <string name="FifthLetter">Fifth Letter</string>
+    <string name="FourthLetter">Fourth Letter</string>
+    <string name="ThridLetter">Thrid Letter</string>
+    <string name="FirstLetter">First Letter</string>
 
 
     <!-- ================================================================= -->

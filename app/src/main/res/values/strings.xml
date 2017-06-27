@@ -50,6 +50,7 @@
     <string name="WireSequencesCMD">Wire Sequences</string>
     <string name="MazesCMD">Mazes</string>
     <string name="PasswordsCMD">Passwords</string>
+    <string name="BombManual">Bomb Manual</string>
     <!-- ================================================================= -->
     <!-- Strings for Setup Page -->
     <!-- ================================================================= -->
@@ -75,6 +76,8 @@
     <string name="ButtonStripColor">Strip Color</string>
     <string name="ButtonSolution">Answer</string>
     <string name="PressHold"><![CDATA[Press & Hold]]></string>
+    <!-- ================================================================= -->
+    <!-- Passwords -->
     <!-- ================================================================= -->
     <string name="LetterA">A</string>
     <string name="lblPassword1">First Letters</string>
@@ -104,7 +107,7 @@
     <string name="FourthLetter">Fourth Letter</string>
     <string name="ThridLetter">Thrid Letter</string>
     <string name="FirstLetter">First Letter</string>
-  
+    <!-- ================================================================= -->
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

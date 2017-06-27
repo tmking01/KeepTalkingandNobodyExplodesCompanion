@@ -76,6 +76,24 @@ public class Setup extends AppCompatActivity {
         AnswerView = (ToggleButton) findViewById(R.id.SerialNumToggle);
     }
 
+    public void resetClicked(){
+        Toast saveMessage = Toast.makeText(getApplicationContext(), "Setup Questions Cleared", Toast.LENGTH_LONG);
+        saveMessage.show();
+        String Answer = "";
+        clearGlobals(0, Answer, "SerialNumber");
+        clearGlobals(0, Answer, "ContainsVowel");
+        clearGlobals(0, Answer, "CARLit");
+        clearGlobals(0, Answer, "FRKLit");
+        clearGlobals(0, Answer, "ParalellPort");
+    }
+
+    private void clearGlobals(int Batteries, String Answer, String ID){
+        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+        SharedPreferences.Editor editor = AnswerStorage.edit().clear();
+        editor.putString(ID, Answer);
+        editor.commit();
+    }
+
     private void setGlobals(int Batteries, String Answer, String ID){
         Log.d("SetGloabal ID", ID);
         Log.d("SetGlobal Answer", Answer);

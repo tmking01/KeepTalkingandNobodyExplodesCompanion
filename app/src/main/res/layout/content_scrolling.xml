@@ -75,19 +75,18 @@
             android:layout_height="100dp"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
             android:adjustViewBounds="false"
             android:background="@color/ButtonBackground"
             android:contentDescription="Complex Wires"
             android:cropToPadding="false"
             android:elevation="0dp"
-            android:onClick="sendMessage"
             android:padding="10dp"
             android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ComplexTextView"
-            app:srcCompat="@drawable/complexwires"
-            app:layout_constraintDimensionRatio="w,1:1"
-            android:layout_marginTop="0dp" />
+            app:srcCompat="@drawable/complexwires" />
 
         <TextView
             android:id="@+id/ComplexTextView"
@@ -124,15 +123,15 @@
             android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
             android:contentDescription="Simple Wires"
-            android:onClick="onbuttontap"
+            android:onClick="sendMessage"
             android:padding="10dp"
             android:scaleType="fitCenter"
             app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintLeft_toRightOf="@+id/ComplexCMD"
             app:layout_constraintRight_toLeftOf="@+id/MazeCMD"
             app:layout_constraintTop_toBottomOf="@+id/EasyTextView"
-            app:srcCompat="@drawable/simplewires"
-            app:layout_constraintHorizontal_bias="0.492" />
+            app:srcCompat="@drawable/simplewires" />
 
         <TextView
             android:id="@+id/MazeTextView"
@@ -156,7 +155,6 @@
             android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
             android:contentDescription="Mazes"
-            android:onClick="BTN"
             android:padding="10dp"
             android:scaleType="fitCenter"
             app:layout_constraintDimensionRatio="w,1:1"
@@ -206,6 +204,7 @@
             android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
             android:contentDescription="PushButton"
+            android:onClick="BTN"
             android:padding="10dp"
             android:scaleType="fitCenter"
             app:layout_constraintDimensionRatio="w,1:1"

@@ -56,7 +56,7 @@ public class Password extends AppCompatActivity {
         Integer Number = 5;
         Integer wordsize = Five.length();
 
-        if (Five.length() <= 1 || Five.equals("") ) {
+
 
             if (Number == 5) {
 
@@ -182,9 +182,7 @@ public class Password extends AppCompatActivity {
                     Log.d("ID", Answer);
                 } while (Answer == "");
             }
-        }else {
-            Answer = "Letters Required";
-        }
+
 
 
         //TextView possiblepasswords = (TextView) findViewById(R.id.lblAnswer);

@@ -74,6 +74,7 @@
     <string name="ButtonName">Button Text</string>
     <string name="ButtonStripColor">Strip Color</string>
     <string name="ButtonSolution">Answer</string>
+    <string name="PressHold"><![CDATA[Press & Hold]]></string>
     <!-- ================================================================= -->
     <string name="LetterA">A</string>
     <string name="lblPassword1">First Letters</string>

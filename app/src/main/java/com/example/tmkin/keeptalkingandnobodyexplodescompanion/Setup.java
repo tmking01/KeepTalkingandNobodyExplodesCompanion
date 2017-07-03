@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
@@ -46,6 +47,16 @@ public class Setup extends AppCompatActivity {
         Answer = getGlobals("ParalellPort", Answer);
         AnswerView = (ToggleButton) findViewById(R.id.ParalellToggle);
         setToggleButtons(AnswerView, Answer);
+        //Setting for Battery seek bar
+        Answer = getGlobals("Batteries", Answer);
+        SeekBar batSeekView = (SeekBar) findViewById(R.id.BatterySeek);
+        int batSeekVal = 0;
+        try{
+            batSeekVal = Integer.parseInt(Answer);
+        }catch (NumberFormatException nfe) {
+            batSeekVal = 0;
+        };
+        batSeekView.setProgress(batSeekVal);
     }
 
     public void saveClicked(View view){
@@ -73,10 +84,12 @@ public class Setup extends AppCompatActivity {
         Answer = AnswerView.getText().toString();
         setGlobals(0, Answer, "ParalellPort");
         //Answers the Battery Amount Question
-        AnswerView = (ToggleButton) findViewById(R.id.SerialNumToggle);
+        SeekBar batSeek = (SeekBar) findViewById(R.id.BatterySeek);
+        int Batteries = batSeek.getProgress();
+        setGlobals(Batteries, Answer, "Batteries");
     }
 
-    public void resetClicked(){
+    public void resetClicked(View view){
         Toast saveMessage = Toast.makeText(getApplicationContext(), "Setup Questions Cleared", Toast.LENGTH_LONG);
         saveMessage.show();
         String Answer = "";
@@ -85,6 +98,29 @@ public class Setup extends AppCompatActivity {
         clearGlobals(0, Answer, "CARLit");
         clearGlobals(0, Answer, "FRKLit");
         clearGlobals(0, Answer, "ParalellPort");
+
+        ToggleButton AnswerView = (ToggleButton) findViewById(R.id.SerialNumToggle);
+        Answer = "Even";
+        setToggleButtons(AnswerView, Answer);
+        //Answers the SN with a Vowel Question
+        AnswerView = (ToggleButton) findViewById(R.id.VowelToggle);
+        Answer = "Yes";
+        setToggleButtons(AnswerView, Answer);
+        //Answers the CarLit Question
+        AnswerView = (ToggleButton) findViewById(R.id.CARToggle);
+        Answer = "Yes";
+        setToggleButtons(AnswerView, Answer);
+        //Answers the FRK Lit Question
+        AnswerView = (ToggleButton) findViewById(R.id.FRKToggle);
+        Answer = "Yes";
+        setToggleButtons(AnswerView, Answer);
+        //Answers the Paralell Port Question
+        AnswerView = (ToggleButton) findViewById(R.id.ParalellToggle);
+        Answer = "Yes";
+        setToggleButtons(AnswerView, Answer);
+        //Sets the batteries back to 0
+        SeekBar batSeek = (SeekBar) findViewById(R.id.BatterySeek);
+        batSeek.setProgress(0);
     }
 
     private void clearGlobals(int Batteries, String Answer, String ID){
@@ -95,13 +131,15 @@ public class Setup extends AppCompatActivity {
     }
 
     private void setGlobals(int Batteries, String Answer, String ID){
-        Log.d("SetGloabal ID", ID);
-        Log.d("SetGlobal Answer", Answer);
-
         SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
         SharedPreferences.Editor editor = AnswerStorage.edit();
+        if(ID == "Batteries"){
+            Answer = String.valueOf(Batteries);
+        }
         editor.putString(ID, Answer);
         editor.commit();
+        Log.d("SetGloabal ID", ID);
+        Log.d("SetGlobal Answer", Answer);
     }
 
     private void setToggleButtons(ToggleButton AnswerView ,String Answer){

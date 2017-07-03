@@ -8,6 +8,6 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <include layout="@layout/content_setup_scrolling"></include>
+   <include layout="@layout/content_setup_scrolling"></include>
 
 </android.support.constraint.ConstraintLayout>

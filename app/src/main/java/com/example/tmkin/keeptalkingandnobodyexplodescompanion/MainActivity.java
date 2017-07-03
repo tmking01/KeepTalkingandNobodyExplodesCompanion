@@ -17,20 +17,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
     }
 
     public void onbuttontap(View v) {
-        Toast myToast = Toast.makeText(getApplicationContext(), "Ouch!", Toast.LENGTH_LONG);
+        Toast myToast = Toast.makeText(getApplicationContext(), "Ouch!", Toast.LENGTH_SHORT);
         myToast.show();
     }
-    public void sendMessage(View view) {
+    public void simpleWiresClick(View view) {
         Intent intent = new Intent(this, SubjectofWires.class);
         startActivity(intent);
     }
-    public void BTN(View view) {
+    public void buttonsClick(View view) {
         Intent intent = new Intent(this, Buttons.class);
         startActivity(intent);
     }

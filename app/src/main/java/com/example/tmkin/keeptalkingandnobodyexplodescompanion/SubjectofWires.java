@@ -3,15 +3,11 @@ package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.example.tmkin.keeptalkingandnobodyexplodescompanion.R.string.WiresResult;
 
 
 public class SubjectofWires extends AppCompatActivity {
@@ -24,7 +20,7 @@ public class SubjectofWires extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjectof_wires);
         PRICEbar = (SeekBar)findViewById(R.id.WireNumberSlider);
-        TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+        TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
         lastwiretext.setText("");
     }
 
@@ -178,67 +174,67 @@ public class SubjectofWires extends AppCompatActivity {
 
         if (wireNumberSlider == 3){
             if (RedCounter == 0){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Second Wire!");
             } else if (WireThreeColor.getText().equals("White")){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Last Wire!");
             } else if (BlueCounter > 1){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Last Blue Wire!");
             } else {
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Last Wire!");
             }
         }
 
         if (wireNumberSlider == 4){
             if (RedCounter > 1 && 1 == 1){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Second Wire!");
             } else if (WireFourColor.getText().equals("Yellow")){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the First Wire!");
             } else if (BlueCounter == 1){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the First Wire!");
             } else if (YellowCounter > 1){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Last Wire!");
             } else {
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Second Wire!!");
             }
         }
 
         if (wireNumberSlider == 5){
             if (WireFiveColor.getText().equals("Black") && 1 == 1){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Fourth Wire!");
             } else if (RedCounter == 1 && YellowCounter > 1){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the First Wire!");
             } else if (GreenCounter == 0){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Second Wire!");
             }  else {
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the First Wire!!");
             }
         }
 
         if (wireNumberSlider == 6){
             if (YellowCounter == 0 && 1 == 1){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Thrid Wire!");
             } else if (YellowCounter == 1 && WhiteCounter < 2){
-                    TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                    TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Fourth Wire!");
             } else if (RedCounter == 0){
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Last Wire!");
             }  else {
-                TextView lastwiretext = (TextView) findViewById(R.id.LastWire);
+                TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                 lastwiretext.setText("Cut the Fourth Wire!!");
             }
         }

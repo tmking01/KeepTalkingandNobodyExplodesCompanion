@@ -7,7 +7,6 @@
     <string name="No">No</string>
     <string name="Even">Even</string>
     <string name="Odd">Odd</string>
-    <string name="Save">Save</string>
     <string name="Strike1Slide">Strike 1</string>
     <string name="Strike2Slide">Strike 2</string>
     <!-- ================================================================= -->
@@ -20,7 +19,7 @@
     <string name="ColorRed">Red</string>
     <string name="WiresHeader">Number of Wires (3-4-5-6)</string>
     <string name="PopulateControls">Populate Controls</string>
-    <string name="GetResults">GetResults</string>
+    <string name="WireResult">Process Wires</string>
     <string name="WireOne">WireOne</string>
     <string name="WireTwo">WireTwo</string>
     <string name="WireThree">WireThree</string>
@@ -37,7 +36,7 @@
     <!-- ================================================================= -->
     <!--Home Page Strings -->
     <!-- ================================================================= -->
-    <string name="Reset">Reset</string>
+    <string name="BTNSteup">Setup Questions</string>
     <string name="OnTheSubjectOf">On the Subject of...</string>
     <string name="WiresCMD">SimpleWires</string>
     <string name="ButtonCMD">Push Button</string>
@@ -50,10 +49,13 @@
     <string name="WireSequencesCMD">Wire Sequences</string>
     <string name="MazesCMD">Mazes</string>
     <string name="PasswordsCMD">Passwords</string>
+    <string name="BombManual">Bomb Manual</string>
     <!-- ================================================================= -->
     <!-- Strings for Setup Page -->
     <!-- ================================================================= -->
     <string name="LabelSteup">Setup Questions</string>
+    <string name="Reset">Reset</string>
+    <string name="Save">Save</string>
     <string name="ContainsVowel">Does Serial Number Contain a Vowel?</string>
     <string name="SerialNum">Last Digit in Serial Number Even?</string>
     <string name="NumberofBat">What is the number of batteries on the bomb?</string>
@@ -70,11 +72,13 @@
     <string name="BTNDetonate">Detonate</string>
     <string name="BTNHold">Hold</string>
     <string name="BTNOther">Other Text</string>
-    <string name="BTNSteup">Setup</string>
+
     <string name="ButtonName">Button Text</string>
     <string name="ButtonStripColor">Strip Color</string>
     <string name="ButtonSolution">Answer</string>
     <string name="PressHold"><![CDATA[Press & Hold]]></string>
+    <!-- ================================================================= -->
+    <!-- Passwords -->
     <!-- ================================================================= -->
     <string name="LetterA">A</string>
     <string name="lblPassword1">First Letters</string>
@@ -104,7 +108,7 @@
     <string name="FourthLetter">Fourth Letter</string>
     <string name="ThridLetter">Thrid Letter</string>
     <string name="FirstLetter">First Letter</string>
-  
+    <!-- ================================================================= -->
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -196,4 +200,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_setuplanscape">setuplanscape</string>
+    <string name="title_activity_setup_scrolling">SetupScrolling</string>
+    <string name="title_activity_simple_wires_scrolling">SimpleWiresScrollingActivity</string>
 </resources>

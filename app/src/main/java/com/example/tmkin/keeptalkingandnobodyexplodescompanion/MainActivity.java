@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         Intent setupIntent = new Intent(this, Setup.class);
         startActivity(setupIntent);
     }
+    public void Simonsays(View view) {
+        Intent intent = new Intent(this, SimonSays.class);
+        startActivity(intent);
+    }
+
 
     public void openBombDefuse(View view){
         Uri defuseLink = Uri.parse("http://www.bombmanual.com/manual/1/html/index.html");

@@ -154,8 +154,8 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginRight="-139dp"
+            android:layout_marginTop="-89dp"
             android:background="@color/ButtonBackground"
             android:contentDescription="Mazes"
             android:padding="10dp"
@@ -284,15 +284,16 @@
             android:id="@+id/SimonSaysCMD"
             android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-1dp"
             android:background="@color/ButtonBackground"
+            android:onClick="Simonsays"
             android:padding="10dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/simonsays"
-            android:layout_marginTop="-1dp"
-            app:layout_constraintTop_toBottomOf="@+id/SimonSaystextView"
-            android:layout_marginLeft="0dp"
+            app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintLeft_toLeftOf="@+id/MemoryIMG"
-            app:layout_constraintDimensionRatio="w,1:1" />
+            app:layout_constraintTop_toBottomOf="@+id/SimonSaystextView"
+            app:srcCompat="@drawable/simonsays" />
 
         <ImageButton
             android:id="@+id/KeyPadCMD"

@@ -9,30 +9,32 @@
     tools:showIn="@layout/activity_simon_says">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/eq5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="53dp"
         android:text="@string/EqualsSign"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        android:layout_marginTop="53dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/eq4" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/eq4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="55dp"
         android:text="@string/EqualsSign"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        android:layout_marginTop="55dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/eq3" />
 
     <ImageButton
         android:id="@+id/btngreen"
@@ -91,7 +93,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintLeft_toRightOf="@+id/textView20"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/eq4"
         app:layout_constraintTop_toBottomOf="@+id/btnkey3"
         app:srcCompat="@color/ButtonSelected" />
 
@@ -103,7 +106,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintLeft_toRightOf="@+id/textView13"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/eq2"
         app:layout_constraintTop_toBottomOf="@+id/btnkey1"
         app:srcCompat="@color/ButtonSelected" />
 
@@ -115,6 +119,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
+        android:onClick="Pressbuttontwo"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnuser1"
         app:srcCompat="@color/ButtonSelected" />
@@ -127,7 +133,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintLeft_toRightOf="@+id/textView18"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/eq3"
         app:layout_constraintTop_toBottomOf="@+id/btnkey2"
         app:srcCompat="@color/ButtonSelected" />
 
@@ -139,6 +146,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
+        android:onClick="Pressbuttonthree"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnuser2"
         app:srcCompat="@color/ButtonSelected" />
@@ -151,7 +160,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintLeft_toRightOf="@+id/textView19"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/eq5"
         app:layout_constraintTop_toBottomOf="@+id/btnkey4"
         app:srcCompat="@color/ButtonSelected" />
 
@@ -163,6 +173,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
+        android:onClick="Pressbuttonfive"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnuser4"
         app:srcCompat="@color/ButtonSelected" />
@@ -175,7 +187,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="143dp"
         android:background="@android:color/transparent"
-        app:layout_constraintLeft_toRightOf="@+id/textView17"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/eq1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/ButtonSelected" />
 
@@ -188,6 +201,7 @@
         android:layout_marginTop="143dp"
         android:background="@android:color/transparent"
         android:onClick="Pressbuttonone"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/ButtonSelected" />
@@ -200,6 +214,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
+        android:onClick="Pressbuttonfour"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnuser3"
         app:srcCompat="@color/ButtonSelected" />
@@ -228,108 +244,116 @@
         app:layout_constraintGuide_begin="184dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/lblthree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="56dp"
         android:text="@string/Num3"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/btnuser3"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lbltwo" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/lblfour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="53dp"
         android:text="@string/Num4"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/btnuser4"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lblthree" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/lblfive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="52dp"
         android:text="@string/Num5"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/btnuser5"
+        app:layout_constraintTop_toBottomOf="@+id/lblfour" />
+
+    <TextView
+        android:id="@+id/eq2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="42dp"
+        android:text="@string/EqualsSign"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/eq1" />
+
+    <TextView
+        android:id="@+id/eq3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/EqualsSign"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/eq2" />
+
+    <TextView
+        android:id="@+id/eq1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="175dp"
+        android:text="@string/EqualsSign"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbltwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
         android:layout_marginTop="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/EqualsSign"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginTop="42dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/EqualsSign"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/EqualsSign"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="175dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/Num2"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/btnuser2"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/lblone" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/lblone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="165dp"
         android:text="@string/Num1"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="165dp"
+        android:visibility="invisible"
         app:layout_constraintRight_toLeftOf="@+id/btnuser1"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView21"

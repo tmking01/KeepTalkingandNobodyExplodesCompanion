@@ -12,25 +12,27 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="@string/EqualsSign"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/btnuser1"
-        tools:layout_editor_absoluteY="456dp" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="@string/EqualsSign"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/btnuser1"
-        tools:layout_editor_absoluteY="390dp" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <ImageButton
         android:id="@+id/btngreen"
@@ -84,11 +86,8 @@
         app:srcCompat="@color/ButtonSelected"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnkey3"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.1" />
+        app:layout_constraintLeft_toRightOf="@+id/textView20"
+        android:layout_marginLeft="8dp" />
 
     <ImageButton
         android:id="@+id/btnkey2"
@@ -99,11 +98,8 @@
         app:srcCompat="@color/ButtonSelected"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnkey1"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.1" />
+        app:layout_constraintLeft_toRightOf="@+id/textView13"
+        android:layout_marginLeft="0dp" />
 
     <ImageButton
         android:id="@+id/btnuser2"
@@ -112,13 +108,10 @@
         android:layout_marginStart="8dp"
         android:background="@android:color/transparent"
         app:srcCompat="@color/ButtonSelected"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnuser1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.87" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnuser1" />
 
     <ImageButton
         android:id="@+id/btnkey3"
@@ -129,11 +122,8 @@
         app:srcCompat="@color/ButtonSelected"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnkey2"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.1" />
+        app:layout_constraintLeft_toRightOf="@+id/textView18"
+        android:layout_marginLeft="0dp" />
 
     <ImageButton
         android:id="@+id/btnuser3"
@@ -144,38 +134,29 @@
         app:srcCompat="@color/ButtonSelected"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnuser2"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.88" />
+        android:layout_marginRight="8dp" />
 
     <ImageButton
         android:id="@+id/btnkey5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnkey4"
-        app:srcCompat="@color/ButtonSelected" />
+        app:srcCompat="@color/ButtonSelected"
+        app:layout_constraintLeft_toRightOf="@+id/textView19"
+        android:layout_marginLeft="8dp" />
 
     <ImageButton
         android:id="@+id/btnuser5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintHorizontal_bias="0.89"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/btnuser4"
         app:srcCompat="@color/ButtonSelected" />
@@ -187,13 +168,10 @@
         android:layout_marginStart="8dp"
         android:background="@android:color/transparent"
         app:srcCompat="@color/ButtonSelected"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="170dp" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView17"
+        android:layout_marginLeft="0dp" />
 
     <ImageButton
         android:id="@+id/btnuser1"
@@ -202,11 +180,8 @@
         android:layout_marginStart="8dp"
         android:background="@android:color/transparent"
         app:srcCompat="@color/ButtonSelected"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
-        android:layout_marginRight="22dp"
-        app:layout_constraintHorizontal_bias="0.904"
+        android:layout_marginRight="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="170dp" />
 
@@ -219,11 +194,8 @@
         app:srcCompat="@color/ButtonSelected"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnuser3"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline8"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.89" />
+        android:layout_marginRight="8dp" />
 
     <ImageButton
         android:id="@+id/btnyellow"
@@ -231,19 +203,19 @@
         android:layout_height="80dp"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
         android:onClick="Pressbuttonyellow"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@color/ButtonSelected"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/ButtonSelected" />
+        android:layout_marginTop="50dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+        app:layout_constraintGuide_begin="184dp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -286,8 +258,10 @@
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteY="254dp"
-        tools:layout_editor_absoluteX="197dp" />
+        android:layout_marginTop="31dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/textView18"
@@ -297,20 +271,23 @@
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="197dp"
-        tools:layout_editor_absoluteY="320dp" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
         android:text="@string/EqualsSign"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/btnuser1"
-        tools:layout_editor_absoluteY="188dp" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="188dp" />
 
     <TextView
         android:id="@+id/textView16"
@@ -320,8 +297,9 @@
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="254dp" />
+        tools:layout_editor_absoluteY="254dp"
+        app:layout_constraintRight_toLeftOf="@+id/btnuser2"
+        android:layout_marginRight="8dp" />
 
     <TextView
         android:id="@+id/textView12"

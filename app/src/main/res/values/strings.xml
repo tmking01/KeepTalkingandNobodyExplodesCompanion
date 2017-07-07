@@ -203,4 +203,12 @@
     <string name="title_activity_setuplanscape">setuplanscape</string>
     <string name="title_activity_setup_scrolling">SetupScrolling</string>
     <string name="title_activity_simple_wires_scrolling">SimpleWiresScrollingActivity</string>
+    <string name="title_activity_simon_says">SimonSays</string>
+    <string name="Num1">1</string>
+    <string name="Num2">2</string>
+    <string name="Num3">3</string>
+    <string name="Num4" >4</string>
+    <string name="Num5">5</string>
+    <string name="EqualsSign">=</string>
+    <string name="SimonSaysTitle">Simon Says</string>
 </resources>

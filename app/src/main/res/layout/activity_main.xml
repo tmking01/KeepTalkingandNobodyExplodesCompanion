@@ -8,7 +8,9 @@
     tools:layout_editor_absoluteY="25dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/content_scrolling"
+        tools:layout_editor_absoluteY="-567dp"
+        tools:layout_editor_absoluteX="-259dp" />
 
 
 </android.support.constraint.ConstraintLayout>

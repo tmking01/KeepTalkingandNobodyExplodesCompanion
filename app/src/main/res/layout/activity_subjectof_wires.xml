@@ -11,5 +11,5 @@
     <include layout="@layout/content_simple_wires_scrolling"
         tools:layout_editor_absoluteY="88dp"
         tools:layout_editor_absoluteX="-74dp"></include>
-
+  
 </android.support.constraint.ConstraintLayout>

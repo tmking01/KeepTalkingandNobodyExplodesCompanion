@@ -38,6 +38,15 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".SimonSays"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+            >
+
+        </activity>
+        <activity
             android:name=".Password"
             android:parentActivityName=".MainActivity">
             <meta-data

@@ -1,7 +1,9 @@
 package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -116,8 +118,13 @@ public class SubjectofWires extends AppCompatActivity {
 
 
     public void getresults(View v) {
+        //Gets the number of wires and adds 3 since the minimum is 3
         int wireNumberSlider = PRICEbar.getProgress();
         wireNumberSlider = wireNumberSlider + 3;
+
+        //Gets the setup question answer for if the serial number is even or odd
+        SharedPreferences AnswerStorage = getSharedPreferences("SerialNumber", 0);
+        String EvenOddStr = AnswerStorage.getString("SerialNumber", "");
 
         RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
         RadioGroup Radiotwo = (RadioGroup) findViewById(R.id.WireTwo);
@@ -135,7 +142,7 @@ public class SubjectofWires extends AppCompatActivity {
         RadioButton WireSixColor = ((RadioButton) findViewById(Radiosix.getCheckedRadioButtonId()));
 
         //Count all of the wires
-
+        //Counting the red wires
         int RedCounter = 0;
         if(WireOneColor.getText().equals("Red"))RedCounter++;
         if(WireTwoColor.getText().equals("Red"))RedCounter++;
@@ -143,6 +150,7 @@ public class SubjectofWires extends AppCompatActivity {
         if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Red"))RedCounter++;}
         if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Red"))RedCounter++;}
         if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Red"))RedCounter++;}
+        //Counting the blue wires
         int BlueCounter = 0;
         if(WireOneColor.getText().equals("Blue"))BlueCounter++;
         if(WireTwoColor.getText().equals("Blue"))BlueCounter++;
@@ -150,6 +158,7 @@ public class SubjectofWires extends AppCompatActivity {
         if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Blue"))BlueCounter++;}
         if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Blue"))BlueCounter++;}
         if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Blue"))BlueCounter++;}
+        //Counting the yellow wires
         int YellowCounter = 0;
         if(WireOneColor.getText().equals("Yellow"))YellowCounter++;
         if(WireTwoColor.getText().equals("Yellow"))YellowCounter++;
@@ -157,6 +166,7 @@ public class SubjectofWires extends AppCompatActivity {
         if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Yellow"))YellowCounter++;}
         if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Yellow"))YellowCounter++;}
         if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Yellow"))YellowCounter++;}
+        //Counting the Black wires
         int GreenCounter = 0;
         if(WireOneColor.getText().equals("Black"))GreenCounter++;
         if(WireTwoColor.getText().equals("Black"))GreenCounter++;
@@ -164,6 +174,7 @@ public class SubjectofWires extends AppCompatActivity {
         if (wireNumberSlider > 3) {if(WireFourColor.getText().equals("Black"))GreenCounter++;}
         if (wireNumberSlider > 4) {if(WireFiveColor.getText().equals("Black"))GreenCounter++;}
         if (wireNumberSlider > 5) {if(WireSixColor.getText().equals("Black"))GreenCounter++;}
+        //Counting the White wires
         int WhiteCounter = 0;
         if(WireOneColor.getText().equals("White"))WhiteCounter++;
         if(WireTwoColor.getText().equals("White"))WhiteCounter++;
@@ -189,9 +200,9 @@ public class SubjectofWires extends AppCompatActivity {
         }
 
         if (wireNumberSlider == 4){
-            if (RedCounter > 1 && 1 == 1){
+            if (RedCounter > 1 && EvenOddStr.equals("Odd")){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
-                    lastwiretext.setText("Cut the Second Wire!");
+                    lastwiretext.setText("Cut the last Red Wire!");
             } else if (WireFourColor.getText().equals("Yellow")){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the First Wire!");
@@ -203,12 +214,12 @@ public class SubjectofWires extends AppCompatActivity {
                 lastwiretext.setText("Cut the Last Wire!");
             } else {
                 TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
-                lastwiretext.setText("Cut the Second Wire!!");
+                lastwiretext.setText("Cut the Second Wire!");
             }
         }
 
         if (wireNumberSlider == 5){
-            if (WireFiveColor.getText().equals("Black") && 1 == 1){
+            if (WireFiveColor.getText().equals("Black") && EvenOddStr.equals("Odd")){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Fourth Wire!");
             } else if (RedCounter == 1 && YellowCounter > 1){
@@ -219,12 +230,12 @@ public class SubjectofWires extends AppCompatActivity {
                 lastwiretext.setText("Cut the Second Wire!");
             }  else {
                 TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
-                lastwiretext.setText("Cut the First Wire!!");
+                lastwiretext.setText("Cut the First Wire!");
             }
         }
 
         if (wireNumberSlider == 6){
-            if (YellowCounter == 0 && 1 == 1){
+            if (YellowCounter == 0 && EvenOddStr.equals("Odd")){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Thrid Wire!");
             } else if (YellowCounter == 1 && WhiteCounter < 2){
@@ -235,10 +246,9 @@ public class SubjectofWires extends AppCompatActivity {
                 lastwiretext.setText("Cut the Last Wire!");
             }  else {
                 TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
-                lastwiretext.setText("Cut the Fourth Wire!!");
+                lastwiretext.setText("Cut the Fourth Wire!");
             }
         }
-
     }
 
 }

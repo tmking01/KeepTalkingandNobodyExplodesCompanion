@@ -207,10 +207,11 @@
     <string name="Num1">1</string>
     <string name="Num2">2</string>
     <string name="Num3">3</string>
-    <string name="Num4" >4</string>
+    <string name="Num4">4</string>
     <string name="Num5">5</string>
     <string name="EqualsSign">=</string>
     <string name="SimonSaysTitle">Simon Says</string>
     <string name="StrikeOne">One Strike</string>
     <string name="Strikes"># of Strikes</string>
+    <string name="title_activity_keypads">Keypads</string>
 </resources>

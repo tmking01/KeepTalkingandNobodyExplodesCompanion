@@ -214,4 +214,5 @@
     <string name="StrikeOne">One Strike</string>
     <string name="Strikes"># of Strikes</string>
     <string name="title_activity_keypads">Keypads</string>
+    <string name="ok">OK</string>
 </resources>

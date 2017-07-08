@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Toast myToast = Toast.makeText(getApplicationContext(), "Ouch!", Toast.LENGTH_SHORT);
         myToast.show();
     }
+    public void Keypads(View view) {
+        Intent intent = new Intent(this, Keypads.class);
+        startActivity(intent);
+    }
     public void simpleWiresClick(View view) {
         Intent intent = new Intent(this, SubjectofWires.class);
         startActivity(intent);

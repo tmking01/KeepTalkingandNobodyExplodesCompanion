@@ -299,18 +299,19 @@
             android:id="@+id/KeyPadCMD"
             android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
+            android:onClick="Keypads"
             android:padding="10dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/symbols"
-            android:layout_marginTop="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/KeyPadtextView"
-            android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
+            app:layout_constraintTop_toBottomOf="@+id/KeyPadtextView"
             app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintDimensionRatio="w,1:1" />
+            app:srcCompat="@drawable/symbols" />
 
         <ImageButton
             android:id="@+id/WireSeqCMD"

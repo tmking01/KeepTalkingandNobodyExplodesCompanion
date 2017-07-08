@@ -125,6 +125,9 @@ public class SubjectofWires extends AppCompatActivity {
         //Gets the setup question answer for if the serial number is even or odd
         SharedPreferences AnswerStorage = getSharedPreferences("SerialNumber", 0);
         String EvenOddStr = AnswerStorage.getString("SerialNumber", "");
+        Log.d("ID",EvenOddStr);
+
+
 
         RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
         RadioGroup Radiotwo = (RadioGroup) findViewById(R.id.WireTwo);
@@ -238,7 +241,7 @@ public class SubjectofWires extends AppCompatActivity {
             if (YellowCounter == 0 && EvenOddStr.equals("Odd")){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Thrid Wire!");
-            } else if (YellowCounter == 1 && WhiteCounter < 2){
+            } else if (YellowCounter == 1 && WhiteCounter < 1){
                     TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
                     lastwiretext.setText("Cut the Fourth Wire!");
             } else if (RedCounter == 0){
@@ -250,5 +253,16 @@ public class SubjectofWires extends AppCompatActivity {
             }
         }
     }
+
+    private String getGlobals(String ID, String Answer){
+        Log.d("getGlobal ID", ID);
+        Log.d("getGlobal Answer", Answer);
+        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+        Answer = AnswerStorage.getString(ID, "");
+        Log.d("getGlobal Get", Answer);
+        return Answer;
+    }
+
+
 
 }

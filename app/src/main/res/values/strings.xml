@@ -211,4 +211,6 @@
     <string name="Num5">5</string>
     <string name="EqualsSign">=</string>
     <string name="SimonSaysTitle">Simon Says</string>
+    <string name="StrikeOne">One Strike</string>
+    <string name="Strikes"># of Strikes</string>
 </resources>

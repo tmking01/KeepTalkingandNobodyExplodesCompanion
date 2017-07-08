@@ -1,8 +1,9 @@
 package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SimonSays extends AppCompatActivity {
 
@@ -22,7 +24,29 @@ public class SimonSays extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        String Answer = "";
+        Answer = getGlobals("ContainsVowel", Answer);
+        Log.d("ID",Answer);
 
+
+    }
+
+    public void Strikes(View v) {
+        Button strike = (Button) findViewById(R.id.btnStrikes);
+        switch (strike.getText().toString()){
+            case "0":
+                strike.setText("1");
+                Pressbuttonone(null);
+                break;
+            case "1":
+                strike.setText("2");
+                Pressbuttonone(null);
+                break;
+            case "2":
+                strike.setText("0");
+                Pressbuttonone(null);
+                break;
+        }
     }
 
     public void Pressbuttonone(View v){
@@ -119,8 +143,22 @@ public class SimonSays extends AppCompatActivity {
         Label2.setVisibility(View.VISIBLE);
     }
 
+    private String getGlobals(String ID, String Answer){
+        Log.d("getGlobal ID", ID);
+        Log.d("getGlobal Answer", Answer);
+        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+        Answer = AnswerStorage.getString(ID, "");
+        Log.d("getGlobal Get", Answer);
+        return Answer;
+    }
+
+
     public void Pressbuttonblue(View v){
         //Need to pull # of Strikes
+
+        Button strike = (Button) findViewById(R.id.btnStrikes);
+
+
         int red = Color.parseColor("#ff3300"); //The color u want
         int blue = Color.parseColor("#0040ff"); //The color u want
         int green = Color.parseColor("#009933"); //The color u want
@@ -128,13 +166,15 @@ public class SimonSays extends AppCompatActivity {
         Integer Nextbtn = NextOpenButton();
         String Newcolor = "";
 
+
+
         switch(Nextbtn) {
             case 1:
                 //Change the User button color
                     ((ImageButton) findViewById(R.id.btnuser1)).setColorFilter(blue);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("blue",0);
+                Newcolor = FindColor("blue",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey1)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -155,7 +195,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser2)).setColorFilter(blue);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("blue",0);
+                Newcolor = FindColor("blue",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey2)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -176,7 +216,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser3)).setColorFilter(blue);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("blue",0);
+                Newcolor = FindColor("blue",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey3)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -197,7 +237,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser4)).setColorFilter(blue);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("blue",0);
+                Newcolor = FindColor("blue",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey4)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -218,7 +258,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser5)).setColorFilter(blue);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("blue",0);
+                Newcolor = FindColor("blue",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey5)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -237,6 +277,9 @@ public class SimonSays extends AppCompatActivity {
         }
     }
     public void Pressbuttonyellow(View v){
+
+        Button strike = (Button) findViewById(R.id.btnStrikes);
+
         //Need to pull # of Strikes
         int red = Color.parseColor("#ff3300"); //The color u want
         int blue = Color.parseColor("#0040ff"); //The color u want
@@ -251,7 +294,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser1)).setColorFilter(yellow);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("yellow",0);
+                Newcolor = FindColor("yellow",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey1)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -272,7 +315,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser2)).setColorFilter(yellow);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("yellow",0);
+                Newcolor = FindColor("yellow",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey2)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -293,7 +336,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser3)).setColorFilter(yellow);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("yellow",0);
+                Newcolor = FindColor("yellow",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey3)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -314,7 +357,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser4)).setColorFilter(yellow);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("yellow",0);
+                Newcolor = FindColor("yellow",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey4)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -335,7 +378,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser5)).setColorFilter(yellow);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("yellow",0);
+                Newcolor = FindColor("yellow",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey5)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -355,6 +398,9 @@ public class SimonSays extends AppCompatActivity {
 
     }
     public void Pressbuttongreen(View v){
+
+        Button strike = (Button) findViewById(R.id.btnStrikes);
+
         //Need to pull # of Strikes
         int red = Color.parseColor("#ff3300"); //The color u want
         int blue = Color.parseColor("#0040ff"); //The color u want
@@ -369,7 +415,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser1)).setColorFilter(green);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("green",0);
+                Newcolor = FindColor("green",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey1)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -390,7 +436,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser2)).setColorFilter(green);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("green",0);
+                Newcolor = FindColor("green",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey2)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -411,7 +457,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser3)).setColorFilter(green);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("green",0);
+                Newcolor = FindColor("green",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey3)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -432,7 +478,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser4)).setColorFilter(green);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("green",0);
+                Newcolor = FindColor("green",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey4)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -453,7 +499,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser5)).setColorFilter(green);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("green",0);
+                Newcolor = FindColor("green",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey5)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -473,6 +519,10 @@ public class SimonSays extends AppCompatActivity {
 
     }
     public void Pressbuttonred(View v){
+
+
+        Button strike = (Button) findViewById(R.id.btnStrikes);
+
         //Need to pull # of Strikes
         int red = Color.parseColor("#ff3300"); //The color u want
         int blue = Color.parseColor("#0040ff"); //The color u want
@@ -487,7 +537,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser1)).setColorFilter(red);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("red",0);
+                Newcolor = FindColor("red",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey1)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -508,7 +558,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser2)).setColorFilter(red);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("red",0);
+                Newcolor = FindColor("red",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey2)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -529,7 +579,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser3)).setColorFilter(red);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("red",0);
+                Newcolor = FindColor("red",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey3)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -550,7 +600,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser4)).setColorFilter(red);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("red",0);
+                Newcolor = FindColor("red",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey4)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -571,7 +621,7 @@ public class SimonSays extends AppCompatActivity {
                 ((ImageButton) findViewById(R.id.btnuser5)).setColorFilter(red);
                 //Change Color of Key Button based on Strikes
                 //Strikes needed
-                Newcolor = FindColor("red",0);
+                Newcolor = FindColor("red",Integer.valueOf(strike.getText().toString()));
                 if (Newcolor.equals("green")){
                     ((ImageButton) findViewById(R.id.btnkey5)).setColorFilter(green);
                 } else if (Newcolor.equals("blue")) {
@@ -616,12 +666,13 @@ public class SimonSays extends AppCompatActivity {
 
     public String FindColor(String Color, Integer Strikes) {
 
-
+        String Answer = "";
+        Answer = getGlobals("ContainsVowel", Answer);
 
         String Newcolor = "";
 
         //Need to pull Whether Serial Number contains a vowel. If is Yes, Else is No.
-        if (1 == 1) {
+        if (Answer.equals("Yes")) {
             switch (Color) {
                 case "blue":
                     if (Strikes == 0) {

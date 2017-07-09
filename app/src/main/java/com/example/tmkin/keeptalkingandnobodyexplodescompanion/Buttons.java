@@ -242,12 +242,12 @@ public class Buttons extends AppCompatActivity {
     public void btnYellow(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Release with 1 in any position");
+        mylabelone.setText("Release with 5 in any position");
     }
     public void btnWhite(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Release with 5 in any position");
+        mylabelone.setText("Release with 1 in any position");
     }
     public void btnOtherColor(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);

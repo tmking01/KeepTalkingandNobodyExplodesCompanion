@@ -215,4 +215,5 @@
     <string name="Strikes"># of Strikes</string>
     <string name="title_activity_keypads">Keypads</string>
     <string name="ok">OK</string>
+    <string name="buttonTitle">On the Subject of The Button</string>
 </resources>

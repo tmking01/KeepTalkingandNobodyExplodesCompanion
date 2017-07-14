@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Buttons extends AppCompatActivity {
     public String abort = "";
@@ -18,10 +17,6 @@ public class Buttons extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buttons);
-
-
-
-
     }
 
     private String getGlobals(String ID, String Answer){
@@ -36,7 +31,7 @@ public class Buttons extends AppCompatActivity {
     public void btnAbort(View v){
 
         //Need to add a stipulation that the color must be blue
-        RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
+        RadioGroup Radioone = (RadioGroup) findViewById(R.id.ButtonColorGRP);
         RadioButton WireOneColor = ((RadioButton) findViewById(Radioone.getCheckedRadioButtonId()));
         String frk = "";
         frk = getGlobals("FRKLit", frk);
@@ -105,7 +100,7 @@ public class Buttons extends AppCompatActivity {
         String bat = "";
         int battery = 0;
         battery = Integer.parseInt(getGlobals("Batteries", bat));
-        RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
+        RadioGroup Radioone = (RadioGroup) findViewById(R.id.ButtonColorGRP);
         RadioButton WireOneColor = ((RadioButton) findViewById(Radioone.getCheckedRadioButtonId()));
 
 

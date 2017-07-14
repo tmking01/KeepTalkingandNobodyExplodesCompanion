@@ -53,66 +53,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/LogoBackground"
             android:text="@string/SerialNum"
             android:textColor="@color/ButtonText"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/SerialNumToggle"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/VowelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/LogoBackground"
             android:text="@string/ContainsVowel"
             android:textColor="@color/ButtonText"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/VowelToggle"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/CARTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/LogoBackground"
             android:text="@string/CARLIT"
             android:textColor="@color/ButtonText"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/CARToggle"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/FRKTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/LogoBackground"
             android:text="@string/FRKLIT"
             android:textColor="@color/ButtonText"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBaseline_toBaselineOf="@+id/FRKToggle"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/ParalellTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@color/LogoBackground"
             android:text="@string/ParalellPort"
             android:textColor="@color/ButtonText"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBaseline_toBaselineOf="@+id/ParalellToggle"
-            android:layout_marginStart="8dp" />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/BatteryTextView"
@@ -120,12 +124,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:background="@color/LogoBackground"
             android:text="@string/NumberofBat"
             android:textColor="@color/ButtonText"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/ParalellToggle" />
 
         <ToggleButton

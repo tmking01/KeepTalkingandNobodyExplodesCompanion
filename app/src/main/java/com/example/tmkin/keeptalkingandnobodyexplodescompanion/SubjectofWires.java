@@ -3,7 +3,6 @@ package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -126,7 +125,7 @@ public class SubjectofWires extends AppCompatActivity {
         SharedPreferences AnswerStorage = getSharedPreferences("SerialNumber", 0);
         String EvenOddStr = AnswerStorage.getString("SerialNumber", "");
 
-        RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
+        RadioGroup Radioone = (RadioGroup) findViewById(R.id.ButtonColorGRP);
         RadioGroup Radiotwo = (RadioGroup) findViewById(R.id.WireTwo);
         RadioGroup Radiothree = (RadioGroup) findViewById(R.id.WireThree);
         RadioGroup Radiofour = (RadioGroup) findViewById(R.id.WireFour);

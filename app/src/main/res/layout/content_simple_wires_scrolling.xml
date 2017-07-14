@@ -111,7 +111,7 @@
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/WireOne" />
+            app:layout_constraintTop_toBottomOf="@+id/ButtonColorGRP" />
 
         <TextView
             android:id="@+id/WireFivetext"
@@ -413,7 +413,7 @@
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/WireOne"
+            android:id="@+id/ButtonColorGRP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/LogoBackground"
@@ -662,16 +662,16 @@
             android:id="@+id/TitleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
             android:background="@color/ButtonBackground"
             android:text="@string/OnTheSubjectOfWire"
             android:textAlignment="center"
             android:textColor="@color/ButtonText"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

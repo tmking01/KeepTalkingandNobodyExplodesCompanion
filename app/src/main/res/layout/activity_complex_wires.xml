@@ -19,18 +19,18 @@
         android:layout_marginBottom="8dp">
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/swtblueone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/switch2"
-            android:layout_alignStart="@+id/switch2"
-            android:layout_below="@+id/switch2"
             android:layout_marginTop="19dp"
             android:text="@string/HasBlue"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/swtRedone"
+            android:layout_alignLeft="@+id/swtRedone"
+            android:layout_alignStart="@+id/swtRedone" />
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/swtRedone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -43,39 +43,38 @@
             android:textColor="@android:color/white" />
 
         <Switch
-            android:id="@+id/switch3"
+            android:id="@+id/swtledone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/switch2"
-            android:layout_alignBottom="@+id/switch2"
-            android:layout_alignLeft="@+id/switch4"
-            android:layout_alignStart="@+id/switch4"
+            android:layout_alignBaseline="@+id/swtRedone"
+            android:layout_alignBottom="@+id/swtRedone"
+            android:layout_alignLeft="@+id/SWTstarone"
+            android:layout_alignStart="@+id/SWTstarone"
             android:text="@string/LEDon"
             android:textColor="@android:color/white" />
 
         <Switch
-            android:id="@+id/switch4"
+            android:id="@+id/SWTstarone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/switch1"
-            android:layout_alignBottom="@+id/switch1"
+            android:layout_alignBaseline="@+id/swtblueone"
+            android:layout_alignBottom="@+id/swtblueone"
             android:layout_marginLeft="21dp"
             android:layout_marginStart="21dp"
-            android:layout_toEndOf="@+id/switch1"
-            android:layout_toRightOf="@+id/switch1"
+            android:layout_toEndOf="@+id/swtblueone"
+            android:layout_toRightOf="@+id/swtblueone"
             android:text="@string/Hasstar"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/lblcomplexone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/switch4"
+            android:layout_above="@+id/SWTstarone"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:text="TextView"
             android:textColor="@android:color/white" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

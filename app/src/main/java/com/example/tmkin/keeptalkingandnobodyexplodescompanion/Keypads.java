@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,9 +46,13 @@ public class Keypads extends AppCompatActivity {
         @Override
         public void onItemClick (AdapterView < ? > parent, View v,
         int position, long id){
-            loadPhoto(position);
 
+            if(position > 12 ) {
+                loadSelector(position);
+            } else {
+                loadPhoto(position);
 
+            }
 
     }
     });
@@ -112,22 +117,22 @@ public class Keypads extends AppCompatActivity {
                 image.setBackgroundResource(R.drawable.keypad_r6);
                 break;
             case 12:
-
+                image.setBackgroundResource(R.drawable.keypad_r1);
                 break;
             case 13:
-
+                image.setBackgroundResource(R.drawable.keypad_r2);
                 break;
             case 14:
-
+                image.setBackgroundResource(R.drawable.keypad_r3);
                 break;
             case 15:
-
+                image.setBackgroundResource(R.drawable.keypad_r4);
                 break;
             case 16:
-
+                image.setBackgroundResource(R.drawable.keypad_r5);
                 break;
             case 17:
-
+                image.setBackgroundResource(R.drawable.keypad_r6);
                 break;
             case 18:
 
@@ -203,10 +208,234 @@ public class Keypads extends AppCompatActivity {
         imageDialog.show();
     }
 
+    public void loadSelector(int id) {
+
+        ImageView tempImageView = (ImageView) findViewById(R.id.fullimage);
+
+
+        AlertDialog.Builder imageDialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        View layout = inflater.inflate(R.layout.keypad_second_image,
+                (ViewGroup) findViewById(R.id.layout_root));
+        //ImageView image = (ImageView) layout.findViewById(R.id.fullimage);
+        ImageButton image = (ImageButton) layout.findViewById(R.id.BTNkeyone);
+        ImageButton imagetwo = (ImageButton) layout.findViewById(R.id.BTNkeytwo);
+        //image.setImageDrawable(tempImageView.getDrawable());
+
+
+        //setup the Images to be displayed to the user. The user can select one of them
+        int intone = 0;
+        int inttwo = 0;
+
+        //start
+        /*
+        12 - 1
+        13 - 2
+        14 - 3
+        15 - 4
+        16 - 5
+        17 - 6
+        */
 
 
 
+        switch (id) {
+            case 12:
+                intone = 12;
+                inttwo = 13;
+                //Done
+                break;
+            case 13:
+                intone = 12;
+                inttwo = 13;
+                //Done
+                break;
+            case 14:
+                intone = 13;
+                inttwo = 17;
+                //Done
+                break;
+            case 15:
+                intone = 13;
+                inttwo = 14;
+                //Done
+                break;
+            case 16:
+                intone = 14;
+                inttwo = 15;
+                //Done
+                break;
+            case 17:
+                intone = 15;
+                inttwo = 16;
+                //Done
+                break;
+            case 18:
+                intone = 15;
+                inttwo = 16;
+                //Done
+                break;
+            case 19:
+                intone = 15;
+                inttwo = 16;
+                //Done
+                break;
+            case 20:
+                intone = 15;
+                inttwo = 17;
+                //Done
+                break;
 
+
+            case 21:
+                intone = 12;
+                inttwo = 14;
+                //Done
+                break;
+            case 22:
+                intone = 12;
+                inttwo = 15;
+                //Done
+                break;
+            case 23:
+                intone = 12;
+                inttwo = 13;
+                //Done
+                break;
+            case 24:
+                intone = 13;
+                inttwo = 14;
+                //Done
+                break;
+            case 25:
+                intone = 13;
+                inttwo = 15;
+                //Done
+                break;
+            case 26:
+                intone = 16;
+                inttwo = 17;
+                //Done
+                break;
+            case 27:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 28:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 29:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 30:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 31:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 32:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 33:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 34:
+                intone = 12;
+                inttwo = 13;
+                break;
+            case 35:
+                intone = 12;
+                inttwo = 13;
+                break;
+
+        }
+
+        if (intone == 12){
+            image.setBackgroundResource(R.drawable.keypad_r1);
+        } else if (intone == 13) {
+            image.setBackgroundResource(R.drawable.keypad_r2);
+        } else if (intone == 14) {
+            image.setBackgroundResource(R.drawable.keypad_r3);
+        } else if (intone == 15) {
+            image.setBackgroundResource(R.drawable.keypad_r4);
+        } else if (intone == 16) {
+            image.setBackgroundResource(R.drawable.keypad_r5);
+        } else if (intone == 17) {
+            image.setBackgroundResource(R.drawable.keypad_r6);
+        }
+        if (inttwo == 12){
+            imagetwo.setBackgroundResource(R.drawable.keypad_r1);
+        } else if (inttwo == 13) {
+            imagetwo.setBackgroundResource(R.drawable.keypad_r2);
+        } else if (inttwo == 14) {
+            imagetwo.setBackgroundResource(R.drawable.keypad_r3);
+        } else if (inttwo == 15) {
+            imagetwo.setBackgroundResource(R.drawable.keypad_r4);
+        } else if (inttwo == 16) {
+            imagetwo.setBackgroundResource(R.drawable.keypad_r5);
+        } else if (inttwo == 17) {
+            imagetwo.setBackgroundResource(R.drawable.keypad_r6);
+        }
+
+        //end
+        imageDialog.setView(layout);
+        /*
+
+        imageDialog.setNeutralButton("Left", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int sumthin) {
+
+                loadPhoto(1);
+            }
+        });
+
+        imageDialog.setNegativeButton("TEST!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dlg, int sumthin) {
+
+                loadPhoto(2);
+            }
+        });
+*/
+
+
+        final int finalIntone = intone;
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadPhoto(finalIntone);
+            }
+        });
+
+        final int finalInttwo = inttwo;
+        imagetwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadPhoto(finalInttwo);
+            }
+        });
+
+
+        imageDialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener(){
+
+
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+
+            }
+
+
+        });
+
+
+        imageDialog.create();
+        imageDialog.show();
+    }
 
 
     class ImageAdapter extends BaseAdapter {
@@ -263,11 +492,9 @@ public class Keypads extends AppCompatActivity {
                 , R.drawable.keypad_b15
         };
     }
-
-
+    
 
 
 }
-
 
 

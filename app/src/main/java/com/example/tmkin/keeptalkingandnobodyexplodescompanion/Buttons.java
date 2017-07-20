@@ -181,8 +181,11 @@ public class Buttons extends AppCompatActivity {
         String bat = "";
         int battery = 0;
         battery = Integer.parseInt(getGlobals("Batteries", bat));
+        RadioGroup Radioone = (RadioGroup) findViewById(R.id.WireOne);
+        RadioButton WireOneColor = ((RadioButton) findViewById(Radioone.getCheckedRadioButtonId()));
 
-        if (battery > 2) {
+
+        if ((battery > 2 && frk.equals("Yes")) || WireOneColor.getText().equals("Red")) {
             //press and release
             Button myButtonone = (Button) findViewById(R.id.btnBlue);
             myButtonone.setVisibility(View.INVISIBLE);
@@ -197,24 +200,7 @@ public class Buttons extends AppCompatActivity {
             mylabelone.setText("Press and Release!");
             TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
             mylabeltwo.setVisibility(View.INVISIBLE);
-        } else {
-            //If more than 2 batteries and a lit indicator of FRK
-            if (frk.equals("Yes")) {
-                //press and release
-                Button myButtonone = (Button) findViewById(R.id.btnBlue);
-                myButtonone.setVisibility(View.INVISIBLE);
-                Button myButtontwo = (Button) findViewById(R.id.btnYellow);
-                myButtontwo.setVisibility(View.INVISIBLE);
-                Button myButtonthree = (Button) findViewById(R.id.btnWhite);
-                myButtonthree.setVisibility(View.INVISIBLE);
-                Button myButtonfour = (Button) findViewById(R.id.btnOtherColor);
-                myButtonfour.setVisibility(View.INVISIBLE);
-                TextView mylabelone = (TextView) findViewById(R.id.lblStrip);
-                mylabelone.setVisibility(View.VISIBLE);
-                mylabelone.setText("Press and Release!");
-                TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
-                mylabeltwo.setVisibility(View.INVISIBLE);
-            } else {
+        }  else {
                 Button myButtonone = (Button) findViewById(R.id.btnBlue);
                 myButtonone.setVisibility(View.VISIBLE);
                 Button myButtontwo = (Button) findViewById(R.id.btnYellow);
@@ -229,7 +215,7 @@ public class Buttons extends AppCompatActivity {
                 TextView mylabeltwo = (TextView) findViewById(R.id.lblAnswer);
                 mylabeltwo.setVisibility(View.INVISIBLE);
             }
-        }
+
 
     }
     public void btnOther(View v){
@@ -256,12 +242,12 @@ public class Buttons extends AppCompatActivity {
     public void btnYellow(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Release with 1 in any position");
+        mylabelone.setText("Release with 5 in any position");
     }
     public void btnWhite(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);
         mylabelone.setVisibility(View.VISIBLE);
-        mylabelone.setText("Release with 5 in any position");
+        mylabelone.setText("Release with 1 in any position");
     }
     public void btnOtherColor(View v){
         TextView mylabelone = (TextView) findViewById(R.id.lblAnswer);

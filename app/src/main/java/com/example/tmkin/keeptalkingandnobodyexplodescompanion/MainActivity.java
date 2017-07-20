@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Password.class);
         startActivity(intent);
     }
-
+    public void complexwires(View view) {
+        Intent intent = new Intent(this, complex_wires.class);
+        startActivity(intent);
+    }
     public void Setupquestions(View view) {
         Intent setupIntent = new Intent(this, Setup.class);
         startActivity(setupIntent);

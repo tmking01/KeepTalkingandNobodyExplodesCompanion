@@ -215,4 +215,8 @@
     <string name="Strikes"># of Strikes</string>
     <string name="title_activity_keypads">Keypads</string>
     <string name="ok">OK</string>
+    <string name="HasRed">Has Red</string>
+    <string name="HasBlue">Has Blue</string>
+    <string name="Hasstar">Has Star</string>
+    <string name="LEDon">LED ON</string>
 </resources>

@@ -1,19 +1,15 @@
 package com.example.tmkin.keeptalkingandnobodyexplodescompanion;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.method.HideReturnsTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SimonSays extends AppCompatActivity {
 
@@ -55,7 +51,7 @@ public class SimonSays extends AppCompatActivity {
         btnone.setVisibility(View.INVISIBLE);
         Hidestuff((ImageButton) findViewById(R.id.btnuser1)
                 , (ImageButton) findViewById(R.id.btnkey1)
-                , (TextView) findViewById(R.id.lblone)
+                , (TextView) findViewById(R.id.lblcomplexone)
                 ,(TextView) findViewById(R.id.eq1) );
         Hidestuff((ImageButton) findViewById(R.id.btnuser2)
                 , (ImageButton) findViewById(R.id.btnkey2)
@@ -187,7 +183,7 @@ public class SimonSays extends AppCompatActivity {
                 // UnHide the buttons
                 UnHidestuff((ImageButton) findViewById(R.id.btnuser1)
                         , (ImageButton) findViewById(R.id.btnkey1)
-                        , (TextView) findViewById(R.id.lblone)
+                        , (TextView) findViewById(R.id.lblcomplexone)
                         ,(TextView) findViewById(R.id.eq1) );
                 break;
             case 2:
@@ -307,7 +303,7 @@ public class SimonSays extends AppCompatActivity {
                 // UnHide the buttons
                 UnHidestuff((ImageButton) findViewById(R.id.btnuser1)
                         , (ImageButton) findViewById(R.id.btnkey1)
-                        , (TextView) findViewById(R.id.lblone)
+                        , (TextView) findViewById(R.id.lblcomplexone)
                         ,(TextView) findViewById(R.id.eq1) );
                 break;
             case 2:
@@ -428,7 +424,7 @@ public class SimonSays extends AppCompatActivity {
                 // UnHide the buttons
                 UnHidestuff((ImageButton) findViewById(R.id.btnuser1)
                         , (ImageButton) findViewById(R.id.btnkey1)
-                        , (TextView) findViewById(R.id.lblone)
+                        , (TextView) findViewById(R.id.lblcomplexone)
                         ,(TextView) findViewById(R.id.eq1) );
                 break;
             case 2:
@@ -550,7 +546,7 @@ public class SimonSays extends AppCompatActivity {
                 // UnHide the buttons
                 UnHidestuff((ImageButton) findViewById(R.id.btnuser1)
                         , (ImageButton) findViewById(R.id.btnkey1)
-                        , (TextView) findViewById(R.id.lblone)
+                        , (TextView) findViewById(R.id.lblcomplexone)
                         ,(TextView) findViewById(R.id.eq1) );
                 break;
             case 2:

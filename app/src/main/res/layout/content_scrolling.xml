@@ -81,6 +81,7 @@
             android:contentDescription="Complex Wires"
             android:cropToPadding="false"
             android:elevation="0dp"
+            android:onClick="complexwires"
             android:padding="10dp"
             android:scaleType="fitCenter"
             app:layout_constraintDimensionRatio="w,1:1"

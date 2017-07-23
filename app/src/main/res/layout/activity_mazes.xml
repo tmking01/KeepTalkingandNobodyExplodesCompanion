@@ -7,7 +7,7 @@
     tools:context="com.example.tmkin.keeptalkingandnobodyexplodescompanion.mazes">
 
     <FrameLayout
-        android:layout_width="400dp"
+        android:layout_width="330dp"
         android:layout_height="500dp"
         android:layout_marginBottom="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,20 +17,64 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.13999999"
-        android:id="@+id/frameLayout">
+        app:layout_constraintVertical_bias="0.24000001"
+        android:id="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.06">
 
-        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        <GridView
             android:id="@+id/gridview"
-            android:layout_width="match_parent"
+            android:layout_width="330dp"
             android:layout_height="461dp"
-            android:columnWidth="40dp"
-            android:numColumns="6"
-            android:verticalSpacing="0dp"
-            android:horizontalSpacing="0dp"
-            android:stretchMode="columnWidth"
+            android:columnWidth="55dp"
             android:gravity="center"
-            />
+            android:horizontalSpacing="0dp"
+            android:numColumns="6"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Mazes"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:lines="3"
+        android:text="@string/MazeInstructions"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="125dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="33dp"
+        android:onClick="Userbtnclearmaze"
+        android:text="@string/Clearmaze"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </android.support.constraint.ConstraintLayout>

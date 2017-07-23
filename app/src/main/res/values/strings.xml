@@ -219,4 +219,8 @@
     <string name="HasBlue">Has Blue</string>
     <string name="Hasstar">Has Star</string>
     <string name="LEDon">LED ON</string>
+    <string name="Mazes">Mazes</string>
+    <string name="MazeInstructions">To start, Tap the maze to start. Tap the green circles to clear or use the button below.</string>
+    <string name="Clear">Clear</string>
+    <string name="Clearmaze">Clear Maze</string>
 </resources>

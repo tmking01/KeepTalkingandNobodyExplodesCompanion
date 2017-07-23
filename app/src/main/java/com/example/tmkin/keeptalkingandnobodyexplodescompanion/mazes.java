@@ -480,6 +480,17 @@ public void clearmaze () {
     gridview.setAdapter(org);
 }
 
+    public void Userbtnclearmaze (View v) {
+
+        setGlobals(0, "", "mazeselected");
+        setGlobals(0, "", "whiteselected");
+        setGlobals(0, "", "blueselected");
+        setGlobals(0, "", "trianlgeselected");
+        final ImageAdapter org = new ImageAdapter(this);
+        final GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(org);
+    }
+
 private void setGlobals(int Batteries, String Answer, String ID){
     SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
     SharedPreferences.Editor editor = AnswerStorage.edit();

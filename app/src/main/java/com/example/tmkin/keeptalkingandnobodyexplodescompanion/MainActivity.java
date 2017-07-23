@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
 
         final ImageAdapter org = new ImageAdapter(this);
 
@@ -28,13 +28,21 @@ public class MainActivity extends AppCompatActivity {
         gridview.setAdapter(org);
 
 
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                //Toast.makeText(gridview.this, "" + position,Toast.LENGTH_SHORT).show();
+        final Intent keypadsintent = new Intent(this, Keypads.class);
+        final Intent simplewiresintent = new Intent(this, SubjectofWires.class);
+        final Intent mazesintent = new Intent(this, mazes.class);
+        final Intent buttonsintent = new Intent(this, Buttons.class);
+        final Intent passwordsintent = new Intent(this, Password.class);
+        final Intent complexwiresintent = new Intent(this, complex_wires.class);
+        final Intent simonsaysintent = new Intent(this, SimonSays.class);
+            Uri defuseLink = Uri.parse("http://www.bombmanual.com/manual/1/html/index.html");
+        final Intent bombintent = new Intent(Intent.ACTION_VIEW, defuseLink);
 
-            }
-        });
+
+
+
+
+
 
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -46,51 +54,59 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), "" + position,Toast.LENGTH_SHORT).show();
 
                 ImageView imageView = (ImageView) v;
+                View view = null;
+
+                switch (position) {
+                    case 0:
+                        startActivity(complexwiresintent);
+                        break;
+                    case 1:
+                        startActivity(simplewiresintent);
+                        break;
+                    case 2:
+                        startActivity(mazesintent);
+                        break;
+                    case 3:
+                        startActivity(buttonsintent);
+                        break;
+                    case 4:
+                        //Memory
+                        break;
+                    case 5:
+                        //whos on first
+                        break;
+                    case 6:
+                        //Morsecode
+                        break;
+                    case 7:
+                        //simon says
+                        startActivity(simonsaysintent);
+                        break;
+                    case 8:
+                        //passwords
+                        startActivity(passwordsintent);
+                        break;
+                    case 9:
+                        //keypads
+                        startActivity(keypadsintent);
+                        break;
+                    case 10:
+                        //manual
+                        startActivity(bombintent);
+                        break;
+                    case 11:
+                        //wire sequences
+                        break;
+                }
             }
         });
     }
 
-    public void onbuttontap(View v) {
-        Toast myToast = Toast.makeText(getApplicationContext(), "Ouch!", Toast.LENGTH_SHORT);
-        myToast.show();
-    }
-    public void Keypads(View view) {
-        Intent intent = new Intent(this, Keypads.class);
-        startActivity(intent);
-    }
-    public void simpleWiresClick(View view) {
-        Intent intent = new Intent(this, SubjectofWires.class);
-        startActivity(intent);
-    }
-    public void mazes(View view) {
-        Intent intent = new Intent(this, mazes.class);
-        startActivity(intent);
-    }
-    public void buttonsClick(View view) {
-        Intent intent = new Intent(this, Buttons.class);
-        startActivity(intent);
-    }
-    public void password(View view) {
-        Intent intent = new Intent(this, Password.class);
-        startActivity(intent);
-    }
-    public void complexwires(View view) {
-        Intent intent = new Intent(this, complex_wires.class);
-        startActivity(intent);
-    }
     public void Setupquestions(View view) {
         Intent setupIntent = new Intent(this, Setup.class);
         startActivity(setupIntent);
     }
-    public void Simonsays(View view) {
-        Intent intent = new Intent(this, SimonSays.class);
-        startActivity(intent);
-    }
-    public void openBombDefuse(View view){
-        Uri defuseLink = Uri.parse("http://www.bombmanual.com/manual/1/html/index.html");
-        Intent intent = new Intent(Intent.ACTION_VIEW, defuseLink);
-        startActivity(intent);
-    }
+
 
 
 
@@ -125,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null) {
                 // if it's not recycled, initialize some attributes
                 imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+                imageView.setLayoutParams(new GridView.LayoutParams(375, 375));
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 imageView.setPadding(0, 0, 0, 0);
             } else {

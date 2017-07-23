@@ -51,20 +51,6 @@ public class mazes extends AppCompatActivity {
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(org);
 
-
-
-
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                //Toast.makeText(gridview.this, "" + position,Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-
-
-
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override

@@ -24,7 +24,33 @@ public class SubjectofWires extends AppCompatActivity {
         PRICEbar = (SeekBar)findViewById(R.id.WireNumberSlider);
         TextView lastwiretext = (TextView) findViewById(R.id.ResultText);
         lastwiretext.setText("");
+        final View v = null;
+
+
+        PRICEbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    int progress = 0;
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar,int progresValue, boolean fromUser) {
+                        progress = progresValue;
+                        GetControls(v);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        // Do something here, 
+                        //if you want to do anything at the start of
+                        // touching the seekbar
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        // Display the value in textview
+
+                    }
+                });
     }
+
+
 
     public void GetControls(View v){
         //Button GetResults = (Button)  findViewById(R.id.GetResult);

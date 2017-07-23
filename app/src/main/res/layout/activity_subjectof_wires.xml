@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteX="0dp">
 
     <include layout="@layout/content_simple_wires_scrolling"
-        tools:layout_editor_absoluteY="88dp"
-        tools:layout_editor_absoluteX="-74dp"></include>
+        tools:layout_editor_absoluteY="75dp"
+        tools:layout_editor_absoluteX="645dp"></include>
   
 </android.support.constraint.ConstraintLayout>

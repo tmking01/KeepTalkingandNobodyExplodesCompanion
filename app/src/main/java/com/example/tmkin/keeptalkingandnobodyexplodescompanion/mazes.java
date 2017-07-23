@@ -445,7 +445,7 @@ public class mazes extends AppCompatActivity {
 
                 if (whiteselected == "") {
                     //Toast.makeText(getApplicationContext(), "why was this used????",Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
                     setGlobals(0, "1", "whiteselected");
                     repeattag(imageView, tag, "w", "g");
                 } else {
@@ -453,7 +453,7 @@ public class mazes extends AppCompatActivity {
                         setGlobals(0, "1", "trianlgeselected");
                         repeattag(imageView, tag, "t", "");
                     } else {
-                        Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
                         clearmaze();
                     }
                 }

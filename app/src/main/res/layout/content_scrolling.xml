@@ -17,24 +17,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="25dp">
 
-        <android.support.constraint.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guideline"
-            app:layout_constraintGuide_begin="16dp"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="16dp" />
-
-        <android.support.constraint.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guideline2"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="587dp"
-            tools:layout_editor_absoluteY="-19dp"
-            tools:layout_editor_absoluteX="0dp" />
-
         <ImageView
             android:id="@+id/AppLogoIMG"
             android:layout_width="0dp"
@@ -54,8 +36,6 @@
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
             android:background="@color/ButtonBackground"
             android:onClick="Setupquestions"
@@ -64,365 +44,34 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:typeface="normal"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AppLogoIMG" />
-
-        <ImageButton
-            android:id="@+id/ComplexCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/AppLogoIMG"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="0dp"
-            android:adjustViewBounds="false"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="Complex Wires"
-            android:cropToPadding="false"
-            android:elevation="0dp"
-            android:onClick="complexwires"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ComplexTextView"
-            app:srcCompat="@drawable/complexwires" />
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
-        <TextView
-            android:id="@+id/ComplexTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/ComplexWires"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-
-            app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
-            app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
-
-
-        <TextView
-            android:id="@+id/EasyTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/WiresCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-
-            app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
-            app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
-
-
-        <ImageButton
-            android:id="@+id/EasyWireCMD"
+        <GridView
+            android:id="@+id/gridview"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="400dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="Simple Wires"
-            android:onClick="simpleWiresClick"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintLeft_toRightOf="@+id/ComplexCMD"
-            app:layout_constraintRight_toLeftOf="@+id/MazeCMD"
-            app:layout_constraintTop_toBottomOf="@+id/EasyTextView"
-            app:srcCompat="@drawable/simplewires" />
-
-        <TextView
-            android:id="@+id/MazeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/MazesCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-
-            app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
+            android:columnWidth="65dp"
+            android:gravity="center"
+            android:horizontalSpacing="25dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="12dp"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/setupCMD" />
 
-
-        <ImageButton
-            android:id="@+id/MazeCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="-139dp"
-            android:layout_marginTop="-89dp"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="Mazes"
-            android:onClick="mazes"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/MazeTextView"
-            app:srcCompat="@drawable/mazes" />
-
-        <TextView
-            android:id="@+id/PushButtonText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/ButtonCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/MemoryText"
-            app:layout_constraintLeft_toLeftOf="@+id/PushButtonIMG" />
-
-        <TextView
-            android:id="@+id/MemoryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/MemoryCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/WhosOn1stText"
-            app:layout_constraintLeft_toLeftOf="@+id/MemoryIMG" />
-
-        <TextView
-            android:id="@+id/WhosOn1stText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/WhoisOn1stCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@+id/WhosonFirstIMG"
-            app:layout_constraintTop_toBottomOf="@+id/MazeCMD" />
-
-        <ImageButton
-            android:id="@+id/PushButtonIMG"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="PushButton"
-            android:onClick="buttonsClick"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/ComplexCMD"
-            app:layout_constraintTop_toBottomOf="@+id/PushButtonText"
-            app:srcCompat="@drawable/pushbutton" />
-
-        <ImageButton
-            android:id="@+id/MemoryIMG"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="Memory"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/EasyWireCMD"
-            app:layout_constraintTop_toBottomOf="@+id/MemoryText"
-            app:srcCompat="@drawable/memory" />
-
-        <ImageButton
-            android:id="@+id/WhosonFirstIMG"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:contentDescription="WhosOnFirst"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/MazeCMD"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/WhosOn1stText"
-            app:srcCompat="@drawable/whoisonfirst" />
-
-        <ImageButton
-            android:id="@+id/MorseCodeCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/ButtonBackground"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/morsecode"
-            android:layout_marginTop="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/MorseCodetextView"
-            android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/PushButtonIMG"
-            app:layout_constraintDimensionRatio="w,1:1" />
-
-        <ImageButton
-            android:id="@+id/PasswordCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="-1dp"
-            android:background="@color/ButtonBackground"
-            android:onClick="password"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/WhosonFirstIMG"
-            app:layout_constraintTop_toBottomOf="@+id/PasswordTextView"
-            app:srcCompat="@drawable/password" />
-
-        <ImageButton
-            android:id="@+id/SimonSaysCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="-1dp"
-            android:background="@color/ButtonBackground"
-            android:onClick="Simonsays"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/MemoryIMG"
-            app:layout_constraintTop_toBottomOf="@+id/SimonSaystextView"
-            app:srcCompat="@drawable/simonsays" />
-
-        <ImageButton
-            android:id="@+id/KeyPadCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:onClick="Keypads"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
-            app:layout_constraintTop_toBottomOf="@+id/KeyPadtextView"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/symbols" />
-
-        <ImageButton
-            android:id="@+id/WireSeqCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/ButtonBackground"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/wiresequence"
-            android:layout_marginTop="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/WireSeqtextView"
-            android:layout_marginLeft="0dp"
-            app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintDimensionRatio="w,1:1" />
-
-        <TextView
-            android:id="@+id/MorseCodetextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/MorseCodeCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@+id/MorseCodeCMD"
-            app:layout_constraintTop_toBottomOf="@+id/PushButtonIMG" />
-
-        <TextView
-            android:id="@+id/KeyPadtextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/KeypadsCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/ResetTextView"
-            app:layout_constraintLeft_toLeftOf="@+id/KeyPadCMD" />
-
-        <TextView
-            android:id="@+id/SimonSaystextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/SimonSaysCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/MorseCodetextView"
-            app:layout_constraintLeft_toLeftOf="@+id/SimonSaysCMD" />
-
-        <TextView
-            android:id="@+id/WireSeqtextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-1dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/WireSequencesCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@+id/WireSeqCMD"
-            app:layout_constraintTop_toBottomOf="@+id/PasswordCMD" />
-
-        <TextView
-            android:id="@+id/PasswordTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/PasswordsCMD"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/SimonSaystextView"
-            app:layout_constraintLeft_toLeftOf="@+id/PasswordCMD" />
-
-        <TextView
-            android:id="@+id/ResetTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:background="@color/LogoBackground"
-            android:text="@string/BombManual"
-            android:textColor="@color/ButtonText"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/WireSeqtextView"
-            app:layout_constraintLeft_toLeftOf="@+id/ResetCMD" />
-
-        <ImageButton
-            android:id="@+id/ResetCMD"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/ButtonBackground"
-            android:onClick="openBombDefuse"
-            android:padding="10dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="w,1:1"
-            app:layout_constraintLeft_toLeftOf="@+id/SimonSaysCMD"
-            app:layout_constraintTop_toBottomOf="@+id/ResetTextView"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/bombdefusalmanual" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -272,6 +272,7 @@ public class mazes extends AppCompatActivity {
 
        return id;
     }
+
     public int onlychecktag(ImageView image,String tag, String WhiteBlueTriangle, String Green) {
 
         String newtag = "";
@@ -346,6 +347,7 @@ public class mazes extends AppCompatActivity {
                         repeattag(imageView, tag, "t", "");
                     } else {
                         //there is already a white dot on the board
+                        setGlobals(0, "", "whiteselected");
                         repeattag(imageView, tag, "b", "");
                     }
 
@@ -359,8 +361,13 @@ public class mazes extends AppCompatActivity {
                     } else {
                         //there is already a white dot on the board
 
-                        setGlobals(0, "", "trianlgeselected");
-                        repeattag(imageView, tag, "b", "");
+                        if (onlychecktag(imageView, tag, "t", "") == 1) {
+                            setGlobals(0, "", "trianlgeselected");
+                            repeattag(imageView, tag, "b", "");
+                        } else {
+                            repeattag(imageView, tag, "b", "");
+                        }
+
                     }
                 }
                 //setGlobals(0, "", "whiteselected");
@@ -385,47 +392,60 @@ public class mazes extends AppCompatActivity {
 
         if (mazeval == ""){
             //if there is no maze selected - start the first maze
-            setGlobals(0, "1", "mazeselected");
+
             switch (maze){
                 case "1":
+                    setGlobals(0, "1", "mazeselected");
                     gridview.setAdapter(one);
                 break;
                 case "2":
+                    setGlobals(0, "2", "mazeselected");
                     gridview.setAdapter(two);
                     break;
                 case "3":
+                    setGlobals(0, "3", "mazeselected");
                     gridview.setAdapter(three);
                     break;
                 case "4":
+                    setGlobals(0, "4", "mazeselected");
                     gridview.setAdapter(four);
                     break;
                 case "5":
+                    setGlobals(0, "5", "mazeselected");
                     gridview.setAdapter(five);
                     break;
                 case "6":
+                    setGlobals(0, "6", "mazeselected");
                     gridview.setAdapter(six);
                     break;
                 case "7":
+                    setGlobals(0, "7", "mazeselected");
                     gridview.setAdapter(seven);
                     break;
                 case "8":
+                    setGlobals(0, "8", "mazeselected");
                     gridview.setAdapter(eight);
                     break;
                 case "9":
+                    setGlobals(0, "9", "mazeselected");
                     gridview.setAdapter(nine);
                     break;
             }
         } else {
             //is there a white dot on the board
             String mazeselected = "";
-            mazeselected = getGlobals("whiteselected", mazeselected);
+            mazeselected = getGlobals("mazeselected", mazeselected);
+            String whiteselected = "";
+            whiteselected = getGlobals("whiteselected", whiteselected);
             String trianlgeselected = "";
             trianlgeselected = getGlobals("trianlgeselected", trianlgeselected);
             //Toast.makeText(getApplicationContext(), maze + " " +mazeselected,Toast.LENGTH_SHORT).show();
-            if (maze == mazeselected) {
+            if (mazeselected.equals(maze)) {
                 //Need additional logic to see if this is the white dot....
 
-                if (whiteval == "") {
+                if (whiteselected == "") {
+                    //Toast.makeText(getApplicationContext(), "why was this used????",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
                     setGlobals(0, "1", "whiteselected");
                     repeattag(imageView, tag, "w", "g");
                 } else {
@@ -433,11 +453,13 @@ public class mazes extends AppCompatActivity {
                         setGlobals(0, "1", "trianlgeselected");
                         repeattag(imageView, tag, "t", "");
                     } else {
+                        Toast.makeText(getApplicationContext(), trianlgeselected +"why was this used????",Toast.LENGTH_SHORT).show();
                         clearmaze();
                     }
                 }
 
             } else {
+
                 nomaze(imageView,whiteval,tag);
             }
 
@@ -447,48 +469,37 @@ public class mazes extends AppCompatActivity {
 
     }
 
-    public void clearmaze () {
+public void clearmaze () {
 
-        setGlobals(0, "", "mazeselected");
-        setGlobals(0, "", "whiteselected");
-        setGlobals(0, "", "blueselected");
-        final ImageAdapter org = new ImageAdapter(this);
-        final GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(org);
+    setGlobals(0, "", "mazeselected");
+    setGlobals(0, "", "whiteselected");
+    setGlobals(0, "", "blueselected");
+    setGlobals(0, "", "trianlgeselected");
+    final ImageAdapter org = new ImageAdapter(this);
+    final GridView gridview = (GridView) findViewById(R.id.gridview);
+    gridview.setAdapter(org);
+}
+
+private void setGlobals(int Batteries, String Answer, String ID){
+    SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+    SharedPreferences.Editor editor = AnswerStorage.edit();
+    if(ID == "Batteries"){
+        Answer = String.valueOf(Batteries);
     }
+    editor.putString(ID, Answer);
+    editor.commit();
+    Log.d("SetGloabal ID", ID);
+    Log.d("SetGlobal Answer", Answer);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-    private void setGlobals(int Batteries, String Answer, String ID){
-        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
-        SharedPreferences.Editor editor = AnswerStorage.edit();
-        if(ID == "Batteries"){
-            Answer = String.valueOf(Batteries);
-        }
-        editor.putString(ID, Answer);
-        editor.commit();
-        Log.d("SetGloabal ID", ID);
-        Log.d("SetGlobal Answer", Answer);
-    }
-
-    private String getGlobals(String ID, String Answer){
-        Log.d("getGlobal ID", ID);
-        Log.d("getGlobal Answer", Answer);
-        SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
-        Answer = AnswerStorage.getString(ID, "");
-        Log.d("getGlobal Get", Answer);
-        return Answer;
-    }
+private String getGlobals(String ID, String Answer){
+    Log.d("getGlobal ID", ID);
+    Log.d("getGlobal Answer", Answer);
+    SharedPreferences AnswerStorage = getSharedPreferences(ID, 0);
+    Answer = AnswerStorage.getString(ID, "");
+    Log.d("getGlobal Get", Answer);
+    return Answer;
+}
 
 class ImageAdapter extends BaseAdapter {
     private Context mContext;
@@ -658,662 +669,662 @@ class ImageAdaptermaze1 extends BaseAdapter {
     };
 }
 
-    //Maze 2 Adapter
-    class ImageAdaptermaze2 extends BaseAdapter {
-        private Context mContext;
+//Maze 2 Adapter
+class ImageAdaptermaze2 extends BaseAdapter {
+    private Context mContext;
 
-        public ImageAdaptermaze2(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.green_circle_b_1001
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.green_circle_b_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1110
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0000
-
-        };
-    }
-    //Maze 3 Adapter
-    class ImageAdaptermaze3 extends BaseAdapter {
-        private Context mContext;
-
-        public ImageAdaptermaze3(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1110
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.green_circle_b_1010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.green_circle_b_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-
-        };
+    public ImageAdaptermaze2(Context c) {
+        mContext = c;
     }
 
-    //Maze 4 Adapter
-    class ImageAdaptermaze4 extends BaseAdapter {
-        private Context mContext;
-
-        public ImageAdaptermaze4(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.green_circle_b_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0111
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.green_circle_b_0010
-                ,R.drawable.blue_dot_1101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-        };
+    public int getCount() {
+        return mazeone.length;
     }
 
-    //Maze 5 Adapter
-    class ImageAdaptermaze5 extends BaseAdapter {
-        private Context mContext;
-
-        public ImageAdaptermaze5(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.green_circle_b_1001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1101
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0111
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.green_circle_b_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0000
-        };
+    public Object getItem(int position) {
+        return null;
     }
 
-    //Maze 6 Adapter
-    class ImageAdaptermaze6 extends BaseAdapter {
-        private Context mContext;
-
-        public ImageAdaptermaze6(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.green_circle_b_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1011
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.green_circle_b_1011
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0000
-        };
+    public long getItemId(int position) {
+        return 0;
     }
 
-    //Maze 7 Adapter
-    class ImageAdaptermaze7 extends BaseAdapter {
-        private Context mContext;
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
 
-        public ImageAdaptermaze7(Context c) {
-            mContext = c;
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
         }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
 
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0000
-                ,R.drawable.green_circle_b_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0111
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0111
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1011
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.green_circle_b_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-        };
+        return imageView;
     }
 
-    //Maze 8 Adapter
-    class ImageAdaptermaze8 extends BaseAdapter {
-        private Context mContext;
+    // references to our images
 
-        public ImageAdaptermaze8(Context c) {
-            mContext = c;
-        }
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.green_circle_b_1001
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.green_circle_b_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1110
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0000
 
-        public int getCount() {
-            return mazeone.length;
-        }
+    };
+}
+//Maze 3 Adapter
+class ImageAdaptermaze3 extends BaseAdapter {
+    private Context mContext;
 
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.green_circle_b_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0111
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.green_circle_b_0110
-                ,R.drawable.blue_dot_1101
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1110
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0101
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-                ,R.drawable.blue_dot_0100
-        };
+    public ImageAdaptermaze3(Context c) {
+        mContext = c;
     }
 
-    //Maze 9 Adapter
-    class ImageAdaptermaze9 extends BaseAdapter {
-        private Context mContext;
-
-        public ImageAdaptermaze9(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mazeone.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(0, 0, 0, 0);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            String name = getResources().getResourceEntryName(mazeone[position]);
-            imageView.setTag(name);
-            imageView.setImageResource(mazeone[position]);
-
-            return imageView;
-        }
-
-        // references to our images
-
-        private Integer[] mazeone = {
-                R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.green_circle_b_0111
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0001
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1110
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0011
-                ,R.drawable.blue_dot_1101
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.green_circle_b_0010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1010
-                ,R.drawable.blue_dot_1100
-                ,R.drawable.blue_dot_0110
-                ,R.drawable.blue_dot_1001
-                ,R.drawable.blue_dot_0000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0010
-                ,R.drawable.blue_dot_1000
-                ,R.drawable.blue_dot_0100
-        };
+    public int getCount() {
+        return mazeone.length;
     }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1110
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.green_circle_b_1010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.green_circle_b_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+
+    };
+}
+
+//Maze 4 Adapter
+class ImageAdaptermaze4 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze4(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.green_circle_b_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0111
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.green_circle_b_0010
+            ,R.drawable.blue_dot_1101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+    };
+}
+
+//Maze 5 Adapter
+class ImageAdaptermaze5 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze5(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.green_circle_b_1001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1101
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0111
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.green_circle_b_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0000
+    };
+}
+
+//Maze 6 Adapter
+class ImageAdaptermaze6 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze6(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.green_circle_b_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1011
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.green_circle_b_1011
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0000
+    };
+}
+
+//Maze 7 Adapter
+class ImageAdaptermaze7 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze7(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0000
+            ,R.drawable.green_circle_b_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0111
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0111
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1011
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.green_circle_b_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+    };
+}
+
+//Maze 8 Adapter
+class ImageAdaptermaze8 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze8(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.green_circle_b_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0111
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.green_circle_b_0110
+            ,R.drawable.blue_dot_1101
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1110
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0101
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+            ,R.drawable.blue_dot_0100
+    };
+}
+
+//Maze 9 Adapter
+class ImageAdaptermaze9 extends BaseAdapter {
+    private Context mContext;
+
+    public ImageAdaptermaze9(Context c) {
+        mContext = c;
+    }
+
+    public int getCount() {
+        return mazeone.length;
+    }
+
+    public Object getItem(int position) {
+        return null;
+    }
+
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    // create a new ImageView for each item referenced by the Adapter
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView;
+
+        if (convertView == null) {
+            // if it's not recycled, initialize some attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(215, 215));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+        String name = getResources().getResourceEntryName(mazeone[position]);
+        imageView.setTag(name);
+        imageView.setImageResource(mazeone[position]);
+
+        return imageView;
+    }
+
+    // references to our images
+
+    private Integer[] mazeone = {
+            R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.green_circle_b_0111
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0001
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1110
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0011
+            ,R.drawable.blue_dot_1101
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.green_circle_b_0010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1010
+            ,R.drawable.blue_dot_1100
+            ,R.drawable.blue_dot_0110
+            ,R.drawable.blue_dot_1001
+            ,R.drawable.blue_dot_0000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0010
+            ,R.drawable.blue_dot_1000
+            ,R.drawable.blue_dot_0100
+    };
+}
 
 
 

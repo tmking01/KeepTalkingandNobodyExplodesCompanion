@@ -48,7 +48,7 @@ public class morsecode extends AppCompatActivity {
 
     }
     public void addcode(String LS, TextView updatelbl) {
-        if(updatelbl.getText().length() > 6){
+        if(updatelbl.getText().length() > 0){
             updatelbl.setText(updatelbl.getText()+LS);
             matching();
             Read();
@@ -117,16 +117,16 @@ public class morsecode extends AppCompatActivity {
         one.setText(RadioAnswers[StoredPercentageinteger] + "@ " + String.format("%.2f",StoredPercentage) + "%");
         two.setText(RadioAnswers[StoredPercentageinteger2] + "@ " + String.format("%.2f",StoredPercentage2) + "%");
         three.setText(RadioAnswers[StoredPercentageinteger3] + "@ " + String.format("%.2f",StoredPercentage3) + "%");
-
         label.setText(output);
     }
 
-
+public void clear(View v){
+    ((EditText) findViewById(R.id.editText2)).setText("");
+}
     public String Read() {
 
         String decodedtext = "";
         String Decode="";
-
         TextView label = (TextView) findViewById(R.id.lblshortlong);
         String parser = label.getText().toString();
         String tempword = "";
@@ -147,7 +147,6 @@ public class morsecode extends AppCompatActivity {
     }
     public void Decodemorse(String input) {
         if(input == "") {
-
         } else {
             String answer = "";
             EditText one = (EditText) findViewById(R.id.editText2);

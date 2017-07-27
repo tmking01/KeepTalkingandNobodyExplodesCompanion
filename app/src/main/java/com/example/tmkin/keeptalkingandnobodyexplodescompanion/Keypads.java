@@ -53,7 +53,6 @@ public class Keypads extends AppCompatActivity {
 
         ImageView tempImageView = (ImageView) findViewById(R.id.fullimage);
 
-
         AlertDialog.Builder imageDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
 
@@ -125,62 +124,6 @@ public class Keypads extends AppCompatActivity {
             case 17:
                 image.setBackgroundResource(R.drawable.keypad_r6);
                 break;
-            case 18:
-
-                break;
-            case 19:
-
-                break;
-            case 20:
-
-                break;
-            case 21:
-
-                break;
-            case 22:
-
-                break;
-            case 23:
-
-                break;
-            case 24:
-
-                break;
-            case 25:
-
-                break;
-            case 26:
-
-                break;
-            case 27:
-
-                break;
-            case 28:
-
-                break;
-            case 29:
-
-                break;
-            case 30:
-
-                break;
-            case 31:
-
-                break;
-            case 32:
-
-                break;
-            case 33:
-
-                break;
-            case 34:
-
-                break;
-            case 35:
-
-                break;
-
-
         }
 
         //end
@@ -203,17 +146,13 @@ public class Keypads extends AppCompatActivity {
 
         ImageView tempImageView = (ImageView) findViewById(R.id.fullimage);
 
-
         AlertDialog.Builder imageDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
 
         View layout = inflater.inflate(R.layout.keypad_second_image,
                 (ViewGroup) findViewById(R.id.layout_root));
-        //ImageView image = (ImageView) layout.findViewById(R.id.fullimage);
         ImageButton image = (ImageButton) layout.findViewById(R.id.BTNkeyone);
         ImageButton imagetwo = (ImageButton) layout.findViewById(R.id.BTNkeytwo);
-        //image.setImageDrawable(tempImageView.getDrawable());
-
 
         //setup the Images to be displayed to the user. The user can select one of them
         int intone = 0;
@@ -228,8 +167,6 @@ public class Keypads extends AppCompatActivity {
         16 - 5
         17 - 6
         */
-
-
 
         switch (id) {
             case 12:
@@ -277,8 +214,6 @@ public class Keypads extends AppCompatActivity {
                 inttwo = 17;
                 //Done
                 break;
-
-
             case 21:
                 intone = 12;
                 inttwo = 14;
@@ -377,23 +312,6 @@ public class Keypads extends AppCompatActivity {
 
         //end
         imageDialog.setView(layout);
-        /*
-
-        imageDialog.setNeutralButton("Left", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dlg, int sumthin) {
-
-                loadPhoto(1);
-            }
-        });
-
-        imageDialog.setNegativeButton("TEST!", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dlg, int sumthin) {
-
-                loadPhoto(2);
-            }
-        });
-*/
-
 
         final int finalIntone = intone;
         image.setOnClickListener(new View.OnClickListener() {
@@ -411,7 +329,6 @@ public class Keypads extends AppCompatActivity {
             }
         });
 
-
         imageDialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener(){
 
 
@@ -423,11 +340,9 @@ public class Keypads extends AppCompatActivity {
 
         });
 
-
         imageDialog.create();
         imageDialog.show();
     }
-
 
     class ImageAdapter extends BaseAdapter {
         private Context mContext;
@@ -460,7 +375,6 @@ public class Keypads extends AppCompatActivity {
             } else {
                 imageView = (ImageView) convertView;
             }
-
             imageView.setImageResource(mThumbIds[position]);
             return imageView;
         }
@@ -483,9 +397,4 @@ public class Keypads extends AppCompatActivity {
                 , R.drawable.keypad_b15
         };
     }
-
-
-
 }
-
-

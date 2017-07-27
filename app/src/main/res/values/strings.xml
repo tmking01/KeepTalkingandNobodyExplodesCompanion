@@ -223,4 +223,6 @@
     <string name="MazeInstructions">To start, Tap the maze to start. Tap the green circles to clear or use the button below.</string>
     <string name="Clear">Clear</string>
     <string name="Clearmaze">Clear Maze</string>
+    <string name="morsecodetitle">Morse Code</string>
+    <string name="bntmorse">Light Flash</string>
 </resources>

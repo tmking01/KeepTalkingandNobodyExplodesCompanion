@@ -70,7 +70,8 @@
                 android:value=".MainActivity" />
             >>
         </activity>
-        <activity android:name=".mazes"></activity>
+        <activity android:name=".mazes" />
+        <activity android:name=".morsecode"></activity>
     </application>
 
 </manifest>

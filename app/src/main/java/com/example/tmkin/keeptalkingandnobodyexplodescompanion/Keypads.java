@@ -378,7 +378,7 @@ public class Keypads extends AppCompatActivity {
             imageView.setImageResource(mThumbIds[position]);
             return imageView;
         }
-
+        //testing upload
         // references to our images
         private Integer[] mThumbIds = {
                 R.drawable.keypad_a1     , R.drawable.keypad_a3

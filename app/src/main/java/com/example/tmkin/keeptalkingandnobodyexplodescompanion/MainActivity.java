@@ -29,79 +29,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Get the Intent that started this activity and extract the string
 
-        final Intent keypadsintent = new Intent(this, Keypads.class);
-        final Intent simplewiresintent = new Intent(this, SubjectofWires.class);
-        final Intent mazesintent = new Intent(this, mazes.class);
-        final Intent buttonsintent = new Intent(this, Buttons.class);
-        final Intent passwordsintent = new Intent(this, Password.class);
-        final Intent complexwiresintent = new Intent(this, complex_wires.class);
-        final Intent simonsaysintent = new Intent(this, SimonSays.class);
-        Uri defuseLink = Uri.parse("http://www.bombmanual.com/manual/1/html/index.html");
-        final Intent bombintent = new Intent(Intent.ACTION_VIEW, defuseLink);
 
         final ImageAdapter org = new ImageAdapter(this);
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(org);
 
-
-        /*
-
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick (AdapterView < ? > parent, View v,
-                                     int position, long id){
-
-                //Toast.makeText(getApplicationContext(), "" + position,Toast.LENGTH_SHORT).show();
-
-                ImageView imageView = (ImageView) v;
-                View view = null;
-
-                switch (position) {
-                    case 0:
-                        startActivity(complexwiresintent);
-                        break;
-                    case 1:
-                        startActivity(simplewiresintent);
-                        break;
-                    case 2:
-                        startActivity(mazesintent);
-                        break;
-                    case 3:
-                        startActivity(buttonsintent);
-                        break;
-                    case 4:
-                        //Memory
-                        break;
-                    case 5:
-                        //whos on first
-                        break;
-                    case 6:
-                        //Morsecode
-                        break;
-                    case 7:
-                        //simon says
-                        startActivity(simonsaysintent);
-                        break;
-                    case 8:
-                        //passwords
-                        startActivity(passwordsintent);
-                        break;
-                    case 9:
-                        //keypads
-                        startActivity(keypadsintent);
-                        break;
-                    case 10:
-                        //manual
-                        startActivity(bombintent);
-                        break;
-                    case 11:
-                        //wire sequences
-                        break;
-                }
-            }
-        });
-    */
 
     }
 
@@ -158,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     final Intent complexwiresintent = new Intent(getApplication(), complex_wires.class);
                     final Intent simonsaysintent = new Intent(getApplication(), SimonSays.class);
                     final Intent morsecode = new Intent(getApplication(), morsecode.class);
+                    final Intent memory = new Intent(getApplication(), Memory.class);
                     Uri defuseLink = Uri.parse("http://www.bombmanual.com/manual/1/html/index.html");
                     final Intent bombintent = new Intent(Intent.ACTION_VIEW, defuseLink);
                     switch (position) {
@@ -175,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 4:
                             //Memory
+                            startActivity(memory);
                             break;
                         case 5:
                             //whos on first

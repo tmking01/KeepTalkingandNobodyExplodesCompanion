@@ -225,4 +225,6 @@
     <string name="Clearmaze">Clear Maze</string>
     <string name="morsecodetitle">Morse Code</string>
     <string name="bntmorse">Light Flash</string>
+    <string name="whoonfirstquestion">What is their Number?</string>
+    <string name="whoonfirstquestion2">What position was the answer in?</string>
 </resources>

@@ -83,7 +83,9 @@ public class morsecode extends AppCompatActivity {
             lettermatchcount = matchcount(morph.toUpperCase());
             lettercount = userinput.length();
             CurrentPercentage = (lettermatchcount / lettercount) * 100;
-            if (CurrentPercentage > StoredPercentage) {
+            if (Double.isNaN(CurrentPercentage)) {
+                StoredPercentage = 0;
+            } else if (CurrentPercentage > StoredPercentage) {
                 StoredPercentage = CurrentPercentage;
             }
 
@@ -106,9 +108,11 @@ public class morsecode extends AppCompatActivity {
         }
 
         String returnanswer = String.format("%.2f", StoredPercentage);
+
+        /*
         if(StoredPercentage > StoredPercentage2+.2){
             StoredPercentage=99.99;
-        }
+        }*/
 
         String output = RadioAnswers[StoredPercentageinteger] + "@ " + StoredPercentage + "%";
         TextView one = (TextView) findViewById(R.id.lblMorseanswerone);
